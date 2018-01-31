@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MakeGithubSafe
+namespace PackForGithub
 {
 	class FilePackager
 	{
@@ -13,6 +13,8 @@ namespace MakeGithubSafe
 			var ignorer = new FileIgnorer();
 
 			List<FileSelection> files = fileIterator.GetFilesToPackage();
+
+			Console.WriteLine($"Found {files.Count} files to package.");
 
 			archiver.CreateArchives(files);
 			ignorer.Ignore(files);

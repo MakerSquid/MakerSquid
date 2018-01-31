@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D29D08D-1755-4937-B766-4F17F73DDDFA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MakeGithubSafe</RootNamespace>
-    <AssemblyName>MakeGithubSafe</AssemblyName>
+    <RootNamespace>PackForGithub</RootNamespace>
+    <AssemblyName>PackForGithub</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

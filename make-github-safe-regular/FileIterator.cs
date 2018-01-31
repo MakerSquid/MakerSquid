@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace MakeGithubSafe
+namespace PackForGithub
 {
 	class FileIterator
 	{
@@ -13,7 +13,7 @@ namespace MakeGithubSafe
 		{
 			_fileList = new List<FileSelection>();
 			var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-			var basePath = assembly.Location.Remove(assembly.Location.Length - 18);
+			var basePath = assembly.Location.Remove(assembly.Location.Length - assembly.ManifestModule.Name.Length);
 
 #if DEVMODE
 			basePath = "C:\\solomon\\notes\\";
@@ -29,27 +29,24 @@ namespace MakeGithubSafe
 
 		private void IteratePath(string path)
 		{
-
-
-            var dirInfo = new DirectoryInfo(basePath);
+            var dirInfo = new DirectoryInfo(path);
 
             var dirList = dirInfo.EnumerateDirectories();
+			var fileList = dirInfo.EnumerateFiles();
 
-
-            var directoryInfo = provider.GetDirectoryContents(path);
-
-			foreach(var item in directoryInfo)
+			foreach (var item in dirList)
 			{
-				if (item.IsDirectory)
+				if (!item.Name.StartsWith("."))
 				{
-					IteratePath(provider, item.Name);
+					IteratePath(item.FullName);
 				}
-				else
+			}
+
+			foreach (var item in fileList)
+			{
+				if (item.Length > 41943040)//40 MB
 				{
-					if (item.Length > 41943040)//40 MB
-					{
-						_fileList.Add(new FileSelection { FileName = item.Name, FilePath = GetPathOnly(item.PhysicalPath, item.Name.Length) });
-					}
+					_fileList.Add(new FileSelection { FileName = item.Name, FilePath = GetPathOnly(item.FullName, item.Name.Length) });
 				}
 			}
 

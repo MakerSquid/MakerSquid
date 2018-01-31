@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace MakeGithubSafe
+namespace PackForGithub
 {
 	class FileArchiver
 	{
@@ -18,6 +18,7 @@ namespace MakeGithubSafe
 		private void ZipAFile(FileSelection file)
 		{
 			//check if zip exists first...
+			Console.WriteLine($"Archiving {file.FilePath}{file.FileName}...");
 
 			var process = new Process()
 			{

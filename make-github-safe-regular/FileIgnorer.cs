@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MakeGithubSafe
+namespace PackForGithub
 {
 
 	class FileIgnorer
@@ -10,7 +10,7 @@ namespace MakeGithubSafe
 		internal void Ignore(List<FileSelection> files)
 		{
 			var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-			var basePath = assembly.Location.Remove(assembly.Location.Length - 18);
+			var basePath = assembly.Location.Remove(assembly.Location.Length - assembly.ManifestModule.Name.Length);
 
 #if DEVMODE
 			basePath = "C:\\solomon\\notes\\";
@@ -28,6 +28,7 @@ namespace MakeGithubSafe
 					if (!fileContent.Contains(item.FileName))
 					{
 						writer.WriteLine($"**/{item.FileName}");
+						Console.WriteLine($"Adding exception in .gitignore for {item.FileName}...");
 					}
 				}
 			}

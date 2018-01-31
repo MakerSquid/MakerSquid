@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MakeGithubSafe
+namespace PackForGithub
 {
     public class FileSelection
     {
