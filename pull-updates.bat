@@ -1,7 +1,6 @@
 @echo off
-cls
+git fetch
 git status
 git pull
 git status
-pause
-exit
+

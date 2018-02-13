@@ -1,9 +1,8 @@
 @echo off
-cls
 git status
+packforgithub
 git add *
 git commit -m"changes"
 git push
 git status
-pause
-exit
+
