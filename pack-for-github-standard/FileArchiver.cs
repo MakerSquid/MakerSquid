@@ -17,23 +17,27 @@ namespace PackForGithub
 
 		private void ZipAFile(FileSelection file)
 		{
-			//check if zip exists first...
-			Console.WriteLine($"Archiving {file.FilePath}{file.FileName}...");
 
-			var process = new Process()
+			System.IO.FileInfo existCheck = new System.IO.FileInfo($"{file.FilePath}{file.FileName}.zip.001");
+			if (!existCheck.Exists)
 			{
-				StartInfo = new ProcessStartInfo
+				Console.WriteLine($"Archiving {file.FilePath}{file.FileName}...");
+
+				var process = new Process()
 				{
-					FileName = "7z.exe",
-					Arguments = $"a -v40m \"{file.FilePath}{file.FileName}.zip\" \"{file.FilePath}{file.FileName}\"",
-					RedirectStandardOutput = true,
-					UseShellExecute = false,
-					CreateNoWindow = true,
-				}
-			};
-			process.Start();
-			string result = process.StandardOutput.ReadToEnd();
-			process.WaitForExit();
+					StartInfo = new ProcessStartInfo
+					{
+						FileName = "7z.exe",
+						Arguments = $"a -v40m \"{file.FilePath}{file.FileName}.zip\" \"{file.FilePath}{file.FileName}\"",
+						RedirectStandardOutput = true,
+						UseShellExecute = false,
+						CreateNoWindow = true,
+					}
+				};
+				process.Start();
+				string result = process.StandardOutput.ReadToEnd();
+				process.WaitForExit();
+			}
 		}
 	}
 }
