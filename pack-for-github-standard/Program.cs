@@ -10,7 +10,14 @@ namespace PackForGithub
     {
         static void Main(string[] args)
         {
-            FilePackager.Go();
+			List<string> argList = new List<string>();
+
+			if (args != null && args.Count() > 0)
+			{
+				argList = args.ToList();
+			}
+
+            FilePackager.Go(argList);
         }
     }
 }
