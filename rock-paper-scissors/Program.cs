@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace rock_paper_scissors
 		private static bool randomize = false;
 		private static bool reportChunks = false;
 		private static int games = 0;
-		private static int maxGames = 7;
+		private static int maxGames = 5;
 
 		static void Main(string[] args)
 		{
+			Stopwatch stopWatch = new Stopwatch();
+			stopWatch.Start();
 			try
 			{
 				rnd = new Random();
@@ -39,8 +42,18 @@ namespace rock_paper_scissors
 
 					if (args[0] == "-r")
 					{
+						bool isValid = false;
 						randomize = true;
-						maxGames = 1000000;
+
+						if (args.Length > 1)
+						{
+							isValid = Int32.TryParse(args[1], out maxGames);
+						}
+
+						if (!isValid)
+						{
+							maxGames = 1000000;
+						}
 
 						if (maxGames >= 100000000)
 						{
@@ -62,6 +75,14 @@ namespace rock_paper_scissors
 			{
 				Console.WriteLine(ex.Message);
 			}
+
+			stopWatch.Stop();
+			TimeSpan ts = stopWatch.Elapsed;
+
+			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+				ts.Hours, ts.Minutes, ts.Seconds,
+				ts.Milliseconds / 10);
+			Console.WriteLine("RunTime " + elapsedTime);
 		}
 
 		private static bool Play()
@@ -84,7 +105,7 @@ namespace rock_paper_scissors
 			{
 				if (reportChunks)
 				{
-					if (games % (maxGames / 10) == 0)
+					if (games % (maxGames / 10) == 0 && games > 0)
 					{
 						Console.WriteLine(games);
 					}
