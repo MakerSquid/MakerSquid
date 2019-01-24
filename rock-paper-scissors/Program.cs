@@ -25,6 +25,8 @@ namespace rock_paper_scissors
 		private static bool reportChunks = false;
 		private static int games = 0;
 		private static int maxGames = 5;
+		private static Moves playersLastMove;
+		private static bool? lastResult = null;
 
 		static void Main(string[] args)
 		{
@@ -122,7 +124,31 @@ namespace rock_paper_scissors
 
 		private static Moves GetMove()
 		{
-			return (Moves)rnd.Next(1, 4);
+			//fall back to just random, but use a bit of trickery that works on humans...
+
+			Moves fallback = (Moves)rnd.Next(1, 4);
+
+			//if (!randomize)
+			{
+				if (lastResult.HasValue && lastResult.Value)
+				{
+					fallback = playersLastMove;
+				}
+				else if(lastResult.HasValue && !lastResult.Value)
+				{
+					switch(playersLastMove)
+					{
+						case Moves.Rock:
+							{ fallback = Moves.Paper; break; }
+						case Moves.Paper:
+							{ fallback = Moves.Scissors; break; }
+						case Moves.Scissors:
+							{ fallback = Moves.Rock; break; }
+					}
+				}
+			}
+
+			return fallback;
 		}
 
 		private static Moves GetPlayerMove()
@@ -190,6 +216,8 @@ namespace rock_paper_scissors
 
 			if (player == Moves.Rock)
 			{
+				playersLastMove = Moves.Rock;
+
 				if (game == Moves.Paper)
 				{
 					SendOutput("Paper covers rock, I win!");
@@ -207,9 +235,12 @@ namespace rock_paper_scissors
 			}
 			if (player == Moves.Paper)
 			{
+				playersLastMove = Moves.Paper;
+
 				if (game == Moves.Scissors)
 				{
 					SendOutput("Scissors cut paper, I win!");
+					playersLastMove = Moves.Rock;
 					outcome = true;
 				}
 				else if (game == Moves.Rock)
@@ -224,9 +255,12 @@ namespace rock_paper_scissors
 			}
 			if (player == Moves.Scissors)
 			{
+				playersLastMove = Moves.Scissors;
+
 				if (game == Moves.Rock)
 				{
 					SendOutput("Rock smashes scissors, I win!");
+					playersLastMove = Moves.Rock;
 					outcome = true;
 				}
 				else if (game == Moves.Paper)
@@ -239,6 +273,8 @@ namespace rock_paper_scissors
 					SendOutput("We tied!");
 				}
 			}
+
+			lastResult = outcome;
 
 			if (outcome.HasValue && outcome.Value)
 			{
