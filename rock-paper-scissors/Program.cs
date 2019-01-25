@@ -24,7 +24,7 @@ namespace rock_paper_scissors
 		private static bool randomize = false;
 		private static bool reportChunks = false;
 		private static int games = 0;
-		private static int maxGames = 5;
+		private static int maxGames = 25;
 		private static Moves playersLastMove;
 		private static bool? lastResult = null;
 
@@ -129,24 +129,24 @@ namespace rock_paper_scissors
 			Moves fallback = (Moves)rnd.Next(1, 4);
 
 			//if (!randomize)
-			{
-				if (lastResult.HasValue && lastResult.Value)
-				{
-					fallback = playersLastMove;
-				}
-				else if(lastResult.HasValue && !lastResult.Value)
-				{
-					switch(playersLastMove)
-					{
-						case Moves.Rock:
-							{ fallback = Moves.Paper; break; }
-						case Moves.Paper:
-							{ fallback = Moves.Scissors; break; }
-						case Moves.Scissors:
-							{ fallback = Moves.Rock; break; }
-					}
-				}
-			}
+			//{
+			//	if (lastResult.HasValue && lastResult.Value)
+			//	{
+			//		fallback = playersLastMove;
+			//	}
+			//	else if(lastResult.HasValue && !lastResult.Value)
+			//	{
+			//		switch(playersLastMove)
+			//		{
+			//			case Moves.Rock:
+			//				{ fallback = Moves.Paper; break; }
+			//			case Moves.Paper:
+			//				{ fallback = Moves.Scissors; break; }
+			//			case Moves.Scissors:
+			//				{ fallback = Moves.Rock; break; }
+			//		}
+			//	}
+			//}
 
 			return fallback;
 		}
