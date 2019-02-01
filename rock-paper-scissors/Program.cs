@@ -112,7 +112,10 @@ namespace rock_paper_scissors
 						Console.WriteLine(games);
 					}
 				}
-				games++;
+				if (playerMove != Moves.Void) //ignore void games
+				{
+					games++;
+				}
 			}
 			else
 			{
