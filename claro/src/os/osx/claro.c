@@ -1,0 +1,171 @@
+/*************************************************************************
+$Id: claro.c 114 2005-08-30 06:32:39Z terminal $
+
+Claro - A cross platform GUI toolkit which "makes sense".
+Copyright (C) 2004 Theo Julienne and Gian Perrone
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**************************************************************************/
+
+#include "../../../include/includes.h"
+
+#ifndef ENV_CARBON
+#error "Somehow the carbon claro.c was included while the environment was not ENV_CARBON"
+#endif
+
+CWidget *c_find_window_native_reference( CWidget *start, CNativeWidget ref );
+
+void c_find_menubar_menuitem_onclick( CWidget *cw, CMenuItem *mi, MenuRef menuRef, MenuItemIndex menuItemIndex )
+{
+	CMenuItem *curr;
+	
+	if ( mi->parent != 0 && mi->parent->menu == menuRef && mi->index == menuItemIndex )
+	{
+		if ( mi->onclick != 0 )
+			(*mi->onclick)( mi );
+	}
+	else if ( mi->hassubs == 1 )
+	{
+		for ( curr = mi->items; curr != 0; curr = curr->next )
+		{
+			c_find_menubar_menuitem_onclick( cw, curr, menuRef, menuItemIndex );
+		}
+	}
+}
+
+void c_find_menubar_by_ref_onclick( CWidget *from, MenuRef menuRef, MenuItemIndex menuItemIndex )
+{
+	CWidget *c;
+	CWidget *a;
+	
+	if ( from == 0 )
+		return 0;
+	
+	for ( c = from->child_head; c != 0; c = c->next ) {
+		if ( c->freeze_destroy == 1 )
+			continue;
+		
+		if ( c->info->type == CLARO_WIDGET_MENUBAR )
+		{
+			c_find_menubar_menuitem_onclick( c, &((CMenuBarWidgetInfo *)c->info)->menubar, menuRef, menuItemIndex );
+		}
+		
+		c_find_menubar_by_ref_onclick( c, menuRef, menuItemIndex );
+	}
+	
+	return 0;
+}
+
+OSStatus claro_carbon_app_event_handler( EventHandlerCallRef nextHandler, EventRef event, void *userData )
+{
+	OSStatus result = noErr;
+	UInt32 class = GetEventClass (event);
+	UInt32 kind = GetEventKind (event); 
+
+	result = CallNextEventHandler(nextHandler, event);
+	
+	if ( class == kEventClassMouse && kind == kEventMouseDown )
+	{
+		Point mpos;
+		EventMouseButton button;
+		short part;
+		WindowPtr win;
+		
+		GetEventParameter( event, kEventParamMouseLocation, typeQDPoint, 0, sizeof(Point), 0, &mpos );
+		GetEventParameter( event, kEventParamMouseButton, typeMouseButton, 0, sizeof(EventMouseButton), 0, &button );
+		
+		part = FindWindow( mpos, &win );
+		
+		if ( part == inMenuBar )
+		{
+			MenuSelect( mpos );
+			HiliteMenu( 0 );
+		}
+		else
+			result = eventNotHandledErr;
+	}
+	else if ( class == kEventClassCommand )
+	{
+		HICommand hicmd;
+		GetEventParameter( event, kEventParamDirectObject, typeHICommand, NULL, sizeof(HICommand), NULL, &hicmd );
+		
+		if ( hicmd.commandID == kHICommandQuit )
+			c_shutdown( );
+		else if ( hicmd.commandID == 0xFFFF )
+		{
+			c_find_menubar_by_ref_onclick( c_application, hicmd.menu.menuRef, hicmd.menu.menuItemIndex );
+		}
+		else
+			result = eventNotHandledErr;
+	}
+	else
+		result = eventNotHandledErr;
+	
+	return result;
+}
+
+pascal void c_carbon_scrolling( ControlHandle control, SInt16 part )
+{
+	CWidget *cw;
+	
+	cw = c_find_window_native_reference( c_application, control );
+	
+	Draw1Control( cw->info->widget );
+	//c_send_event_now( cw, C_EVENT_PREDRAW, 0 );
+}
+
+void initCanvasControl( );
+
+void c_create_custom_widgets( )
+{
+	initCanvasControl( );
+}
+
+CWidget *c_find_window_native_reference( CWidget *start, CNativeWidget ref )
+{
+	CWidget *curr, *ret;
+	
+	if ( ref == 0 )
+		return 0;
+	
+	for ( curr = start->child_head; curr != 0; curr = curr->next )
+	{
+		//printf( "%d %d\n", curr->info->widget, ref );
+		if ( curr->info->widget == ref || curr->info->vscroll == ref || curr->info->hscroll == ref )
+			return curr;
+		
+		if ( ( ret = c_find_window_native_reference( curr, ref ) ) != 0 )
+			return ret;
+	}
+	
+	return 0;
+}
+
+#define CHECK_CW if ( cw == 0 ) { printf( "WARNING: cw not defined for an event that requires it!\n" ); return; }
+
+void c_proccess_carbon_events( )
+{
+	EventRef theEvent;
+	EventTargetRef theTarget;
+	
+	// run the event loop iteration
+	theTarget = GetEventDispatcherTarget();
+
+	while ( ReceiveNextEvent( 0, 0, kEventDurationNoWait, true, &theEvent ) == noErr )
+	{
+		SendEventToEventTarget( theEvent, theTarget );
+		ReleaseEvent(theEvent);
+	}
+}

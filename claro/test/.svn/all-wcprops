@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/terminal/claro/!svn/ver/10/test
+END
+test.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/terminal/claro/!svn/ver/1/test/test.c
+END
+test1.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/terminal/claro/!svn/ver/10/test/test1.c
+END
+test.exe.manifest
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/terminal/claro/!svn/ver/1/test/test.exe.manifest
+END
+Makefile.mac
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/2/test/Makefile.mac
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/terminal/claro/!svn/ver/10/test/Makefile
+END

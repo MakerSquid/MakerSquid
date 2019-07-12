@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kolmafia/!svn/ver/7551/src/net/sourceforge/kolmafia/textui
+END
+NamespaceInterpreter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/7118/src/net/sourceforge/kolmafia/textui/NamespaceInterpreter.java
+END
+Interpreter.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/kolmafia/!svn/ver/7551/src/net/sourceforge/kolmafia/textui/Interpreter.java
+END
+ScriptException.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/textui/ScriptException.java
+END
+RuntimeLibrary.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/7551/src/net/sourceforge/kolmafia/textui/RuntimeLibrary.java
+END
+Parser.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kolmafia/!svn/ver/7524/src/net/sourceforge/kolmafia/textui/Parser.java
+END
+DataTypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/7379/src/net/sourceforge/kolmafia/textui/DataTypes.java
+END

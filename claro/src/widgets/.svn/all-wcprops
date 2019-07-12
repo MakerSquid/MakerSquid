@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/terminal/claro/!svn/ver/119/src/widgets
+END
+workspace.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/terminal/claro/!svn/ver/106/src/widgets/workspace.c
+END
+toolbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/terminal/claro/!svn/ver/106/src/widgets/toolbar.c
+END
+application.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/claro/!svn/ver/111/src/widgets/application.c
+END
+groupbox.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/terminal/claro/!svn/ver/115/src/widgets/groupbox.c
+END
+listview.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/terminal/claro/!svn/ver/115/src/widgets/listview.c
+END
+window.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/terminal/claro/!svn/ver/115/src/widgets/window.c
+END
+choosefont.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/claro/!svn/ver/106/src/widgets/choosefont.c
+END
+statusbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/terminal/claro/!svn/ver/106/src/widgets/statusbar.c
+END
+radiogroup.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/claro/!svn/ver/106/src/widgets/radiogroup.c
+END
+canvas.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/terminal/claro/!svn/ver/119/src/widgets/canvas.c
+END
+pushbutton.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/claro/!svn/ver/106/src/widgets/pushbutton.c
+END
+label.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/terminal/claro/!svn/ver/115/src/widgets/label.c
+END
+choosefile.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/claro/!svn/ver/106/src/widgets/choosefile.c
+END
+aligner.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/terminal/claro/!svn/ver/106/src/widgets/aligner.c
+END
+image.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/terminal/claro/!svn/ver/106/src/widgets/image.c
+END
+scrollbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/terminal/claro/!svn/ver/106/src/widgets/scrollbar.c
+END
+opengl.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/terminal/claro/!svn/ver/106/src/widgets/opengl.c
+END
+listbox.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/terminal/claro/!svn/ver/106/src/widgets/listbox.c
+END
+checkbox.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/terminal/claro/!svn/ver/106/src/widgets/checkbox.c
+END
+systrayicon.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/claro/!svn/ver/106/src/widgets/systrayicon.c
+END
+progressbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/claro/!svn/ver/106/src/widgets/progressbar.c
+END
+menubar.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/terminal/claro/!svn/ver/114/src/widgets/menubar.c
+END
+radiobutton.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/claro/!svn/ver/106/src/widgets/radiobutton.c
+END
+dropdown.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/terminal/claro/!svn/ver/106/src/widgets/dropdown.c
+END
+textbox.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/terminal/claro/!svn/ver/115/src/widgets/textbox.c
+END

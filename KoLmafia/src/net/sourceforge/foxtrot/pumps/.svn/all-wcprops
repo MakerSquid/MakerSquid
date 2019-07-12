@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kolmafia/!svn/ver/5624/src/net/sourceforge/foxtrot/pumps
+END
+ConditionalEventPump.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/5624/src/net/sourceforge/foxtrot/pumps/ConditionalEventPump.java
+END
+EventFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/5403/src/net/sourceforge/foxtrot/pumps/EventFilter.java
+END
+EventFilterable.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/5403/src/net/sourceforge/foxtrot/pumps/EventFilterable.java
+END

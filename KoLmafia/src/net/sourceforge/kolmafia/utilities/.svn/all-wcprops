@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/kolmafia/!svn/ver/7533/src/net/sourceforge/kolmafia/utilities
+END
+InputFieldUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/InputFieldUtilities.java
+END
+CharacterEntities.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/CharacterEntities.java
+END
+StringUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/7533/src/net/sourceforge/kolmafia/utilities/StringUtilities.java
+END
+PauseObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/PauseObject.java
+END
+StringArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/StringArray.java
+END
+LowerCaseEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/LowerCaseEntry.java
+END
+ReleaseNotes.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6875/src/net/sourceforge/kolmafia/utilities/ReleaseNotes.java
+END
+FileUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/FileUtilities.java
+END
+PrefixMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/PrefixMap.java
+END
+HashMultimap.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/HashMultimap.java
+END
+IntegerArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7478/src/net/sourceforge/kolmafia/utilities/IntegerArray.java
+END
+SortedListModelArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/utilities/SortedListModelArray.java
+END
+BooleanArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7478/src/net/sourceforge/kolmafia/utilities/BooleanArray.java
+END
+ByteArrayStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/5920/src/net/sourceforge/kolmafia/utilities/ByteArrayStream.java
+END

@@ -1,0 +1,41 @@
+8
+
+dir
+120
+http://svn.versiondude.net/terminal/claro/src/os/osx
+http://svn.versiondude.net/terminal/claro
+
+
+
+2005-08-30T06:32:39.835512Z
+114
+terminal
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+991bf56b-b2ed-0310-b27d-acff2a009fec
+
+claro.c
+file
+
+
+
+
+2006-10-09T15:57:42.501714Z
+4c74603a22993d4392ec645004f163b9
+2005-08-30T06:32:39.835512Z
+114
+terminal
+has-props
+

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/kolmafia/!svn/ver/7539/src/net/java/dev/spellcast/utilities
+END
+UtilityConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6782/src/net/java/dev/spellcast/utilities/UtilityConstants.java
+END
+ActionVerifyPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6081/src/net/java/dev/spellcast/utilities/ActionVerifyPanel.java
+END
+DataUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6074/src/net/java/dev/spellcast/utilities/DataUtilities.java
+END
+JComponentUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6902/src/net/java/dev/spellcast/utilities/JComponentUtilities.java
+END
+LicenseDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6081/src/net/java/dev/spellcast/utilities/LicenseDisplay.java
+END
+ChatBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/kolmafia/!svn/ver/6795/src/net/java/dev/spellcast/utilities/ChatBuffer.java
+END
+LockableListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6103/src/net/java/dev/spellcast/utilities/LockableListModel.java
+END
+PanelList.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kolmafia/!svn/ver/5403/src/net/java/dev/spellcast/utilities/PanelList.java
+END
+PanelListCell.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/5403/src/net/java/dev/spellcast/utilities/PanelListCell.java
+END
+ActionPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6744/src/net/java/dev/spellcast/utilities/ActionPanel.java
+END
+SortedListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7539/src/net/java/dev/spellcast/utilities/SortedListModel.java
+END

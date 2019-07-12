@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/terminal/claro/!svn/ver/119/include
+END
+canvas.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/44/include/canvas.h
+END
+flags.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/terminal/claro/!svn/ver/87/include/flags.h
+END
+input.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/terminal/claro/!svn/ver/98/include/input.h
+END
+dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/44/include/dialog.h
+END
+claro.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/116/include/claro.h
+END
+image.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/114/include/image.h
+END
+scrollbar.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/terminal/claro/!svn/ver/55/include/scrollbar.h
+END
+events.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/86/include/events.h
+END
+system.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/terminal/claro/!svn/ver/47/include/system.h
+END
+widgets.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/terminal/claro/!svn/ver/119/include/widgets.h
+END
+includes.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/terminal/claro/!svn/ver/107/include/includes.h
+END
+font.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/terminal/claro/!svn/ver/66/include/font.h
+END
+table.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/terminal/claro/!svn/ver/95/include/table.h
+END

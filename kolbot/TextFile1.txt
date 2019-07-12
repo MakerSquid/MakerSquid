@@ -1,0 +1,138 @@
+
+
+another "click through" to handle...
+
+
+<html><head>
+<script language=Javascript>
+<!--
+if (parent.frames.length == 0) location.href="main.html";
+//-->
+</script>
+<script language=Javascript src="http://images.kingdomofloathing.com/scripts/keybinds.min.2.js"></script>
+<script language=Javascript src="http://images.kingdomofloathing.com/scripts/window.js"></script>
+<script language="javascript">function chatFocus(){if(top.chatpane.document.chatform.graf) top.chatpane.document.chatform.graf.focus();}
+defaultBind(47, CTRL, chatFocus); defaultBind(190, CTRL, chatFocus);defaultBind(191, CTRL, chatFocus); defaultBind(47, META, chatFocus);defaultBind(190, META, chatFocus); defaultBind(191, META, chatFocus);</script><script>
+function switchFocus()
+{
+	if (top.chatpane.document.chatform.graf.focus) 
+		top.chatpane.document.chatform.graf.focus(); 
+	return false;
+}
+function repeat()
+{
+	var linx = document.getElementsByTagName("A");
+	for (var i = 0; i < linx.length; i++)
+	{
+		var link = linx[i];
+		if (link.innerHTML.match(/Adventure Again/))
+			location.href = link.href;
+	}
+}
+
+defaultBind(47, CTRL, switchFocus);
+defaultBind(191, CTRL, switchFocus);
+defaultBind(47, META, switchFocus);
+defaultBind(191, META, switchFocus);
+defaultBind(192, NONE, repeat);
+defaultBind(220, NONE, repeat);
+</script><script>
+
+function doChoice(whichchoice)
+{
+	var targetform = document.forms["choiceform" + whichchoice];
+	if (targetform != undefined)
+	{
+		for (var i = 0; i < document.forms.length; i++)
+		{
+			var form = document.forms[i];
+			if (form != targetform)
+				form.elements[3].disabled = true;
+		}
+		targetform.submit();
+	}
+}
+
+defaultBind(49, NONE, function () { doChoice(1); });
+defaultBind(50, NONE, function () { doChoice(2); });
+defaultBind(51, NONE, function () { doChoice(3); });
+defaultBind(52, NONE, function () { doChoice(4); });
+</script><link rel="stylesheet" type="text/css" href="http://images.kingdomofloathing.com/styles.css">
+</head>
+
+<body>
+<Center><centeR><table width=95%  cellspacing=0 cellpadding=0><tr>
+<td style="color: white;" align=center bgcolor=blue><b>Rumble On</b></td></tr><tr>
+<td style="padding: 5px; border: 1px solid blue;"><center><table><tr><td><center>
+<img src="http://images.kingdomofloathing.com/adventureimages/sand.gif" width=100 height=100>
+</center><p>You feel a strange, thrumming vibration in the ground at your feet...<center>
+<form name=choiceform1 action=choice.php method=post>
+<input type=hidden name=pwd value='5d5657f9607c33369837d81c20f6dff8'>
+<input type=hidden name=whichchoice value=395>
+<input type=hidden name=option value=1>
+<input class=button type=submit value="Uh oh..."></form>
+</center></td></tr></table></center></td></tr><tr><td height=4></td></tr></table></center></body></html>
+
+
+
+//adventure example:
+
+<html><head>
+<script language=Javascript>
+<!--
+if (parent.frames.length == 0) location.href="main.html";
+top.charpane.location.href="charpane.php";
+//-->
+</script>
+<script language=Javascript src="http://images.kingdomofloathing.com/scripts/keybinds.min.2.js"></script>
+<script language=Javascript src="http://images.kingdomofloathing.com/scripts/window.js"></script>
+<script language="javascript">function chatFocus(){if(top.chatpane.document.chatform.graf) top.chatpane.document.chatform.graf.focus();}
+defaultBind(47, CTRL, chatFocus); defaultBind(190, CTRL, chatFocus);defaultBind(191, CTRL, chatFocus); defaultBind(47, META, chatFocus);defaultBind(190, META, chatFocus); defaultBind(191, META, chatFocus);</script><script>
+function switchFocus()
+{
+	if (top.chatpane.document.chatform.graf.focus) 
+		top.chatpane.document.chatform.graf.focus(); 
+	return false;
+}
+function repeat()
+{
+	var linx = document.getElementsByTagName("A");
+	for (var i = 0; i < linx.length; i++)
+	{
+		var link = linx[i];
+		if (link.innerHTML.match(/Adventure Again/))
+			location.href = link.href;
+	}
+}
+
+defaultBind(47, CTRL, switchFocus);
+defaultBind(191, CTRL, switchFocus);
+defaultBind(47, META, switchFocus);
+defaultBind(191, META, switchFocus);
+defaultBind(192, NONE, repeat);
+defaultBind(220, NONE, repeat);
+</script><link rel="stylesheet" type="text/css" href="http://images.kingdomofloathing.com/styles.css">
+</head>
+
+<body>
+<centeR><table width=95%  cellspacing=0 cellpadding=0><tr><td style="color: white;" align=center bgcolor=blue><b>Adventure Results:</b></td></tr><tr><td style="padding: 5px; border: 1px solid blue;"><center><table><tr><td><center><b>Adventurer Smash!</b><br><img src="http://images.kingdomofloathing.com/adventureimages/crates.gif" width=100 height=100></center><p><blockquote>Inside Noob Cave, you find a passageway that's blocked by a huge stack of wooden crates.
+<p>
+You think to yourself &quot;Hmm.  It's probably a bad sign that I've encountered a bunch of wooden crates this early in the game...  What would Ronald Reagan do in this situation?&quot;
+<p>
+You raise your arms, wail like a banshee (&quot;<i>Like a bansheeeeeeee!  Like a bansheeeeeeee!</i>&quot;) and smash the crates to powder.
+<p>
+The passageway behind them turns out to be a dead end.  Oh well.  At least you got a workout.</blockquote><p><center><table><tr><td>You gain 2 Muscleboundness.<br><b>You gain a Muscle point!</b></td></tr></table></center><Center><p><a href="adventure.php?snarfblat=91">Adventure Again (Noob Cave)</a><p><a href="mtnoob.php">Go back to Mt. Noob</a></center></center></td></tr></table></center></td></tr><tr><td height=4></td></tr></table></centeR></body></html>
+
+
+You whack it with the back of the pasta spoon, flashing back briefly to your grandma's kitchen. You do 3 damage. WHAMMO! SPLAT!
+
+You win the fight!
+
+	You gain 8 Meat
+bunny liver	You acquire an item: bunny liver
+
+You gain 1 Roguishness.
+
+Adventure Again (The Dire Warren)
+
+Go back to Mt. Noob
