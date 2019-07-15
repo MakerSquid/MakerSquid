@@ -1,0 +1,26 @@
+{
+  "id": "TestBot",
+  "name": "TestBot",
+  "description": "",
+  "iconUrl": "",
+  "authenticationConnections": [],
+  "actions": [
+    {
+      "id": "TestBot_Sample",
+      "definition": {
+        "description": "Sample Skill action with no slots",
+        "slots": [],
+        "triggers": {
+          "utteranceSources": [
+            {
+              "locale": "en",
+              "source": [
+                "TestBot#Sample"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

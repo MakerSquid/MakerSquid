@@ -1,0 +1,157 @@
+/*************************************************************************
+$Id: toolbar.c 106 2005-08-10 00:17:32Z terminal $
+
+Claro - A cross platform GUI toolkit which "makes sense".
+Copyright (C) 2004 Theo Julienne and Gian Perrone
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**************************************************************************/
+
+#include "../../include/includes.h"
+
+short curr_toolitem_id = 0x01;
+
+void c_toolbar_attach( CToolItem *i, void (*onclick)() )
+{
+	i->onclick = onclick;
+}
+
+void c_native_add_toolbar_item( CWidget *t, CToolItem *i )
+{
+#ifdef ENV_WIN32
+	TBADDBITMAP tbb;
+	TBBUTTON tbut;
+	
+	if ( i->icon != 0 )
+	{
+		tbb.hInst = NULL;
+		tbb.nID = (UINT_PTR)i->icon->bitmap->bmp;
+		
+		i->win_img_id = SendMessage( t->info->widget, TB_ADDBITMAP, 1, (LPARAM)&tbb );
+		
+		tbut.iBitmap = i->win_img_id;
+		tbut.fsStyle = TBSTYLE_BUTTON;
+	}
+	else
+	{
+		tbut.iBitmap = 10;
+		tbut.fsStyle = TBSTYLE_SEP;
+	}
+	
+	tbut.idCommand = i->id;
+	tbut.fsState = TBSTATE_ENABLED;
+	tbut.dwData = 0;
+	tbut.iString = (INT_PTR)"";
+	
+	SendMessage( t->info->widget, TB_INSERTBUTTON, 0, (LPARAM)&tbut );
+#endif
+}
+
+CToolItem *c_toolbar_add_item( CWidget *m, ClaroIcon *icon, CMenuItem *menu )
+{
+	CToolItem *mi = (CToolItem *)malloc( sizeof( CToolItem ) );
+	
+	mi->widget = m;
+
+	memset( mi, 0, sizeof( CToolItem ) );
+	
+	mi->id = curr_toolitem_id++;
+	
+	mi->icon = icon;
+	mi->menu = menu;
+	
+	mi->next = ((CToolBarWidgetInfo *)m->info)->items;
+	((CToolBarWidgetInfo *)m->info)->items = mi;
+	
+	mi->onclick = 0;
+	
+	if ( m->info->widget != 0 )
+		c_native_add_toolbar_item( m, mi );
+
+	return mi;
+}
+
+void c_toolbar_handle_create( CEvent *e, void *data )
+{
+#ifdef ENV_WIN32
+	//CWindowWidgetInfo *i = (CWindowWidgetInfo *)e->caller->parent->info;
+	//CToolBarWidgetInfo *ti = (CToolBarWidgetInfo *)e->caller->info;
+	//HWND hwnd_parent = e->caller->parent->info->widget;
+	
+	DWORD dwBtnSize;
+	CToolItem *curr;
+	
+	e->caller->info->widget = CreateWindowEx( 0, TOOLBARCLASSNAME, (LPSTR) NULL,
+								WS_VISIBLE | WS_CHILD | CCS_ADJUSTABLE | TBSTYLE_FLAT | TBSTYLE_TOOLTIPS, 0, 0, 0, 0, ((CWindowWidgetInfo *)e->caller->parent->info)->rebar,
+								(HMENU)0, (HINSTANCE) GetModuleHandle( NULL ), NULL );
+	
+	if ( e->caller->info->widget == 0 )
+	{
+		MessageBox( 0, "Could not create toolbar!", "Error!", 0 );
+		return;
+	}
+	
+	SendMessage( e->caller->info->widget, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0 ); 
+	
+	SendMessage( e->caller->info->widget, TB_AUTOSIZE, 0, 0 );
+	ShowWindow( e->caller->info->widget, SW_SHOW );
+	
+	// Get the height of the toolbar.
+	dwBtnSize = SendMessage( e->caller->info->widget, TB_GETBUTTONSIZE, 0,0);
+
+	// Set values unique to the band with the toolbar.
+	((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info.lpText     = "Tool Bar";
+	((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info.hwndChild  = e->caller->info->widget;
+	((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info.cxMinChild = 0;
+	((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info.cyMinChild = HIWORD(dwBtnSize);
+	((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info.cx         = 100;
+
+	SendMessage( ((CWindowWidgetInfo *)e->caller->parent->info)->rebar, RB_INSERTBAND, (WPARAM)-1, (LPARAM)&((CWindowWidgetInfo *)e->caller->parent->info)->rebar_info );
+	
+	for ( curr = ((CToolBarWidgetInfo *)e->caller->info)->items; curr != 0; curr = curr->next )
+	{
+		c_native_add_toolbar_item( e->caller, curr );
+	}
+	
+	c_send_event( e->caller, C_EVENT_UPDATE, 0 );
+#endif
+
+	printf("c_toolbar_handle_create( )\n");
+}
+
+CWidget *c_new_toolbar( CWidget *parent, int flags )
+{
+	CWidget *w;
+	
+	if ( parent == 0 )
+		parent = c_application;
+	
+	w = c_clone_widget( 0, parent );
+	
+	c_init_widget_info( w, sizeof( CToolBarWidgetInfo ) );
+	
+	w->info->type = CLARO_WIDGET_TOOLBAR;
+	w->info->flags = flags;
+	
+	// add event handler
+	c_new_event_handler( w, C_EVENT_CREATE, c_toolbar_handle_create );
+	
+	// actually SEND the create event
+	c_send_event( w, C_EVENT_CREATE, 0 );
+	
+	((CToolBarWidgetInfo *)w->info)->items = 0;
+	
+	return w;
+}

@@ -1,0 +1,148 @@
+/*************************************************************************
+$Id: statusbar.c 106 2005-08-10 00:17:32Z terminal $
+
+Claro - A cross platform GUI toolkit which "makes sense".
+Copyright (C) 2004 Theo Julienne and Gian Perrone
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**************************************************************************/
+
+#include "../../include/includes.h"
+
+void c_statusbar_handle_create( CEvent *e, void *data )
+{
+#ifdef ENV_WIN32
+	HWND hwnd;
+	HWND hwnd_parent = e->caller->parent->info->widget;
+	//CStatusBarWidgetInfo *bwi = (CStatusBarWidgetInfo *)e->caller->info;
+
+	if ( !( hwnd = CreateWindowEx( 0, STATUSCLASSNAME, (LPCTSTR)NULL, SBARS_SIZEGRIP | WS_CHILD, 0, 0, 0, 0, hwnd_parent, (HMENU)0xFF, (HINSTANCE) GetModuleHandle( NULL ), NULL ) ) )
+		MessageBox( 0, "Could not create statusbar HWND.", "Claro error", 0 );
+
+	e->caller->info->widget = hwnd;
+	e->caller->parent->info->flags |= C_WINDOW_HAS_STATUS;
+	((CWindowWidgetInfo *)e->caller->parent->info)->statusbar = hwnd;
+	
+	c_font_fix( e->caller );
+	//SendMessage( hwnd, WM_SETFONT, (WPARAM)w32_font, true );
+	
+	ShowWindow( hwnd, SW_SHOW );
+	UpdateWindow( hwnd );
+	
+	// Please! Don't tell me how cheap this is. I know. :)
+	// But it does beat having a shit looking status bar until a resize ;)
+	c_win32_proc( hwnd_parent, WM_SIZE, 0, 0 );
+	
+	c_send_event( e->caller, C_EVENT_UPDATE, 0 );
+#endif
+
+#ifdef ENV_GTK
+	e->caller->info->widget = gtk_statusbar_new( );
+	
+	e->caller->parent->info->flags |= C_WINDOW_HAS_STATUS;
+	((CWindowWidgetInfo *)e->caller->parent->info)->statusbar = e->caller->info->widget;
+	
+	gtk_box_pack_end( GTK_BOX(((CWindowWidgetInfo *)e->caller->parent->info)->vbox2), e->caller->info->widget, FALSE, FALSE, 0 );
+	gtk_widget_show( e->caller->info->widget );
+#endif
+
+	printf("c_statusbar_handle_create( )\n");
+}
+
+void c_statusbar_handle_update( CEvent *e, void *data )
+{
+	//CStatusBarWidgetInfo *bwi = (CStatusBarWidgetInfo *)e->caller->info;
+	
+#ifdef ENV_WIN32
+	SendMessage( e->caller->info->widget, SB_SETTEXT, 0, (LPARAM)((CStatusBarWidgetInfo *)e->caller->info)->text );
+#endif
+
+#ifdef ENV_GTK
+	gtk_statusbar_pop( GTK_STATUSBAR(e->caller->info->widget), 0 );
+	gtk_statusbar_push( GTK_STATUSBAR(e->caller->info->widget), 0, ((CStatusBarWidgetInfo *)e->caller->info)->text );
+#endif
+
+/*#ifdef ENV_WIN32
+	HWND hwnd;
+	char *text = bwi->text;
+	HDC hdc;
+	SIZE sz;
+	int w, h;
+	char *copy;
+		
+	hwnd = (HWND)bwi->info.widget;
+	
+	copy = (char *)malloc( strlen( text ) + 2 );
+	strcpy( copy, text );
+	strcat( copy, " " ); // meh
+	SetWindowText( hwnd, copy );
+	
+	text = copy;
+	
+	w = bwi->info.width;
+	h = bwi->info.height;
+	
+	if ( w == -1 || h == -1 )
+	{
+		// either width or height needs to be guessed :-)
+		
+		hdc = GetDC( hwnd );
+		SelectObject( hdc, (HFONT)SendMessage( hwnd, WM_GETFONT, 0, 0 ) );
+		
+		if ( GetTextExtentPoint32( hdc, text, strlen( text ), &sz ) == 0 )
+			printf( "Warning: could not determine font metrics (GetLastError()=%d)!\n", (int)GetLastError() );
+		
+		// set whichever
+		if ( w == -1 )
+			w = sz.cx;
+		if ( h == -1 )
+			h = sz.cy;
+	}
+	
+	MoveWindow( hwnd, bwi->info.x, bwi->info.y, w, h, 1 );
+	UpdateWindow( hwnd );
+	
+	free( copy );
+#endif*/
+	printf( "c_statusbar_handle_update( )\n" );
+	
+	c_send_event( e->caller, C_EVENT_DRAW, 0 );
+}
+
+
+CWidget *c_new_statusbar( CWidget *parent, char *text, int flags )
+{
+	CWidget *w;
+	
+	if ( parent == 0 )
+		parent = c_application;
+	
+	w = c_clone_widget( 0, parent );
+	
+	c_init_widget_info( w, sizeof( CStatusBarWidgetInfo ) );
+	
+	w->info->type = CLARO_WIDGET_STATUSBAR;
+	w->info->flags = flags;
+	((CStatusBarWidgetInfo *)w->info)->text = text;
+	
+	// add event handler
+	c_new_event_handler( w, C_EVENT_CREATE, c_statusbar_handle_create );
+	c_new_event_handler( w, C_EVENT_UPDATE, c_statusbar_handle_update );
+	
+	// actually SEND the create event
+	c_send_event( w, C_EVENT_CREATE, 0 );
+	
+	return w;
+}

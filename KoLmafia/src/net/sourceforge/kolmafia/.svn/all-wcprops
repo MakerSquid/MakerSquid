@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/kolmafia/!svn/ver/7562/src/net/sourceforge/kolmafia
+END
+BuffBotHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/BuffBotHome.java
+END
+KoLAdventure.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/7543/src/net/sourceforge/kolmafia/KoLAdventure.java
+END
+KoLCharacterAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/KoLCharacterAdapter.java
+END
+LocalRelayCombatThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6902/src/net/sourceforge/kolmafia/LocalRelayCombatThread.java
+END
+CreateFrameRunnable.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6826/src/net/sourceforge/kolmafia/CreateFrameRunnable.java
+END
+LocalRelayAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kolmafia/!svn/ver/7470/src/net/sourceforge/kolmafia/LocalRelayAgent.java
+END
+KoLCharacterListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/KoLCharacterListener.java
+END
+KoLDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/KoLDatabase.java
+END
+KoLmafiaCLI.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/7562/src/net/sourceforge/kolmafia/KoLmafiaCLI.java
+END
+SpecialOutfit.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kolmafia/!svn/ver/7532/src/net/sourceforge/kolmafia/SpecialOutfit.java
+END
+LimitedSizeChatBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/LimitedSizeChatBuffer.java
+END
+FamiliarData.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/7454/src/net/sourceforge/kolmafia/FamiliarData.java
+END
+Modifiers.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kolmafia/!svn/ver/7493/src/net/sourceforge/kolmafia/Modifiers.java
+END
+FamiliarTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/FamiliarTool.java
+END
+StaticEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/7536/src/net/sourceforge/kolmafia/StaticEntity.java
+END
+HPRestoreItemList.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kolmafia/!svn/ver/7039/src/net/sourceforge/kolmafia/HPRestoreItemList.java
+END
+RequestLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kolmafia/!svn/ver/7543/src/net/sourceforge/kolmafia/RequestLogger.java
+END
+KoLmafiaGUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/7403/src/net/sourceforge/kolmafia/KoLmafiaGUI.java
+END
+AreaCombatData.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kolmafia/!svn/ver/7491/src/net/sourceforge/kolmafia/AreaCombatData.java
+END
+AdventureResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kolmafia/!svn/ver/7539/src/net/sourceforge/kolmafia/AdventureResult.java
+END
+KoLCharacter.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/7535/src/net/sourceforge/kolmafia/KoLCharacter.java
+END
+CakeArenaManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/6859/src/net/sourceforge/kolmafia/CakeArenaManager.java
+END
+RequestEditorKit.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/7556/src/net/sourceforge/kolmafia/RequestEditorKit.java
+END
+LocalRelayServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/LocalRelayServer.java
+END
+KoLDesktop.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/KoLDesktop.java
+END
+KoLmafiaASH.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/7144/src/net/sourceforge/kolmafia/KoLmafiaASH.java
+END
+RequestThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/RequestThread.java
+END
+KoLConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/7540/src/net/sourceforge/kolmafia/KoLConstants.java
+END
+KoLmafia.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kolmafia/!svn/ver/7541/src/net/sourceforge/kolmafia/KoLmafia.java
+END
+Speculation.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/7494/src/net/sourceforge/kolmafia/Speculation.java
+END
+NullStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/NullStream.java
+END
+DebugModifiers.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kolmafia/!svn/ver/7460/src/net/sourceforge/kolmafia/DebugModifiers.java
+END
+MPRestoreItemList.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kolmafia/!svn/ver/7039/src/net/sourceforge/kolmafia/MPRestoreItemList.java
+END
+LogStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kolmafia/!svn/ver/7087/src/net/sourceforge/kolmafia/LogStream.java
+END
+KoLMailMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/KoLMailMessage.java
+END

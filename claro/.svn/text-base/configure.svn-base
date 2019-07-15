@@ -1,0 +1,63 @@
+#!/bin/sh
+
+PLATFORM=gtk
+
+FILES=`ls src/*.c src/widgets/*.c src/os/$PLATFORM/*.c | awk -F. '{ print $1 ".o \\\" }' | grep -v "test.o"`
+INCLUDES=`ls include/*.h | awk '{ print $0 " \\\" }'`
+
+echo -n "Generating Makefile... "
+
+echo "# YES! I KNOW! It's really dirty.. :p
+#
+
+PFORM=$PLATFORM
+
+FILES=$FILES
+
+INCLUDES=$INCLUDES
+
+CC=gcc
+CFLAGS=-Iinclude/ -DENV_GTK \`pkg-config --cflags gtk+-2.0\` -fPIC -Wall
+LDFLAGS=\`pkg-config --libs gtk+-2.0\` -shared -Wl,-soname,libclarogt.so.1 -lc
+LIBOUT=libclarogt.so.1.0.1
+
+clarogt: \$(FILES) \$(INCLUDES)
+	gcc \$(FILES) \$(LDFLAGS) -o \$(LIBOUT)
+
+all: clarogt
+
+install: all
+	rm -rf /usr/local/claro/include/*
+	mkdir -p /usr/local/claro
+	mkdir -p /usr/local/claro/include
+	mkdir -p /usr/local/claro/lib
+	mkdir -p /usr/local/claro/bin
+	mkdir -p /usr/local/claro/include/\$(PFORM)
+	cp -R include/\$(PFORM)/* /usr/local/claro/include/\$(PFORM)/
+	cp \$(LIBOUT) /usr/local/claro/lib
+	cp include/*.h /usr/local/claro/include
+	/sbin/ldconfig -n /usr/local/claro/lib/
+	rm -f /usr/local/claro/lib/libclarogt.so
+	ln -s /usr/local/claro/lib/libclarogt.so.1 /usr/local/claro/lib/libclarogt.so
+	echo \"echo \\\`pkg-config --libs gtk+-2.0\\\`\" > /usr/local/claro/bin/gcc-link
+	chmod +x /usr/local/claro/bin/gcc-link
+	@echo "Installed! Before running claro applications, please add /usr/local/claro/lib to your /etc/ld.so.conf file and run ldconfig."
+
+clean:
+	rm -rf src/*.o
+	rm -rf src/widgets/*.o
+	rm -rf *.so.*
+	
+test: test/test
+	make -C test
+#test: src/test.o
+#	gcc -o test src/test.c -lclarogt -I/usr/local/claro/include -L/usr/local/claro/lib
+	
+mditest: src/mditest.o
+	gcc -o mditest src/mditest.c -lclarogt -I/usr/local/claro/include -L/usr/local/claro/lib
+" > Makefile
+
+echo "done"
+
+echo "Type 'make' to continue"
+

@@ -1,0 +1,430 @@
+/*************************************************************************
+$Id$
+
+Claro - A cross platform GUI toolkit which "makes sense".
+Copyright (C) 2004 Theo Julienne and Gian Perrone
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**************************************************************************/
+
+#include "../../include/includes.h"
+
+int curr_menuitem_id = 0x01;
+
+#ifdef ENV_GTK
+static void c_menubar_item_clicked_handler( CMenuItem *i )
+{
+	if ( i->onclick != 0 )
+		(*i->onclick)( i );
+}
+#endif
+
+void c_menubar_attach( CMenuItem *i, void (*onclick)( CMenuItem *i ) )
+{
+	i->onclick = onclick;
+}
+
+void c_menubar_set_item_icon( CWidget *w, CMenuItem *i, ClaroIcon *icon )
+{
+#ifdef ENV_WIN32
+	MENUITEMINFO mii;
+	
+	mii.cbSize = sizeof( MENUITEMINFO );
+#endif
+
+	i->icon = icon;
+	
+#ifdef ENV_WIN32
+	mii.fMask = MIIM_BITMAP;
+	GetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+
+	mii.hbmpItem = HBMMENU_CALLBACK;
+
+	SetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+#endif
+
+#ifdef ENV_GTK
+	//FIXME: this is broken, fix it before uncommenting
+	//gtk_image_menu_item_set_image( i->me, icon->bitmap->xpm );
+#endif
+
+#ifdef ENV_CARBON
+	SetMenuItemIconHandle( i->parent->menu, i->index, kMenuCGImageRefType, icon->bitmap->imref );
+#endif
+}
+
+CMenuItem *c_menubar_add_separator( CWidget *m, CMenuItem *p )
+{
+	CMenuItem *mi = (CMenuItem *)malloc( sizeof( CMenuItem ) );
+	int a;
+	
+	if ( p == 0 )
+		p = &((CMenuBarWidgetInfo *)m->info)->menubar;
+	
+	memset( mi, 0, sizeof( CMenuItem ) );
+	
+	mi->widget = m;
+	
+#ifdef ENV_WIN32
+	MENUITEMINFO mii;
+	
+	mii.cbSize = sizeof( MENUITEMINFO );
+#endif
+	
+	mi->id = curr_menuitem_id++;
+	
+	if ( p->hassubs == 0 )
+	{
+		// didn't have subs before, does now!
+#ifdef ENV_WIN32
+		p->menu = CreatePopupMenu( );
+		mii.fMask = MIIM_SUBMENU;
+		mii.hSubMenu = p->menu;
+		a = SetMenuItemInfo( p->parent->menu, p->id, false, &mii );
+#endif
+#ifdef ENV_GTK
+		p->menu = gtk_menu_new( );
+		gtk_menu_item_set_submenu( GTK_MENU_ITEM( p->me ), p->menu );
+#endif
+#ifdef ENV_CARBON
+		CreateNewMenu( 0, 0, &p->menu );
+		SetMenuTitleWithCFString( p->menu, CFSTR("Test menu") );
+		SetMenuItemHierarchicalMenu( p->parent->menu, p->index, p->menu );
+#endif
+	}
+	
+	p->hassubs = 1;
+
+	if ( p->items != NULL )
+		mi->next = p->items;
+	
+	p->items = mi;
+	mi->parent = p;
+	mi->hassubs = 0;
+	mi->onclick = 0;
+	mi->text = "sep";
+	// FIXME: claro should have it saved that it's a separator
+	
+#ifdef ENV_WIN32
+	mii.fMask = MIIM_FTYPE;
+	mii.fType = MFT_SEPARATOR;
+	AppendMenu( p->menu, 0, mi->id, "" );
+	SetMenuItemInfo( p->menu, mi->id, false, &mii );
+
+	if ( m->parent->info->widget != NULL )
+		DrawMenuBar( m->parent->info->widget );
+#endif
+#ifdef ENV_GTK
+	mi->me = gtk_menu_item_new( );
+	gtk_menu_shell_append( GTK_MENU_SHELL( p->menu ), mi->me );
+	gtk_widget_show( mi->me );
+#endif
+#ifdef ENV_CARBON
+	AppendMenuItemTextWithCFString( p->menu, CFSTR("sep"), kMenuItemAttrSeparator, 123, &mi->index );
+#endif
+
+	return mi;
+}
+
+CMenuItem *c_menubar_add_item_text_icon( CWidget *m, CMenuItem *p, char *text, ClaroIcon *icon )
+{
+	CMenuItem *mi;
+	
+	mi = c_menubar_add_item_text( m, p, text );
+	if ( icon != 0 )
+		c_menubar_set_item_icon( m, mi, icon );
+	
+	return mi;
+}
+
+void c_menubar_disable_item( CWidget *m, CMenuItem *i )
+{
+#ifdef ENV_WIN32
+	MENUITEMINFO mii;
+	
+	mii.cbSize = sizeof( MENUITEMINFO );
+
+	mii.fMask = MIIM_STATE;
+	GetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+	mii.fState = MFS_DISABLED;
+	SetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+#endif
+#ifdef ENV_GTK
+	gtk_widget_set_sensitive( i->me, FALSE );
+#endif
+}
+
+void c_menubar_enable_item( CWidget *m, CMenuItem *i )
+{
+#ifdef ENV_WIN32
+	MENUITEMINFO mii;
+	
+	mii.cbSize = sizeof( MENUITEMINFO );
+
+	mii.fMask = MIIM_STATE;
+	GetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+	mii.fState = MFS_ENABLED;
+	SetMenuItemInfo( i->parent->menu, i->id, false, &mii );
+#endif
+#ifdef ENV_GTK
+	gtk_widget_set_sensitive( i->me, true );
+#endif
+}
+
+CMenuItem *c_menubar_add_item_text( CWidget *m, CMenuItem *p, char *text )
+{
+	CMenuItem *mi;
+	CMenuItem *menu_bar = &((CMenuBarWidgetInfo *)m->info)->menubar;
+	int a;
+	
+	if ( p == 0 )
+		p = &((CMenuBarWidgetInfo *)m->info)->menubar;
+	
+	if ( !( mi = malloc( sizeof( CMenuItem ) ) ) )
+		return 0;
+	
+	memset( mi, 0, sizeof( CMenuItem ) );
+	
+	mi->widget = m;
+	
+#ifdef ENV_WIN32
+	MENUITEMINFO mii;
+	
+	mii.cbSize = sizeof( MENUITEMINFO );
+#endif
+	
+	mi->id = curr_menuitem_id++;
+	
+	if ( p->hassubs == 0 )
+	{
+		// didn't have subs before, does now!
+#ifdef ENV_WIN32
+		p->menu = CreatePopupMenu( );
+		mii.fMask = MIIM_SUBMENU;
+		mii.hSubMenu = p->menu;
+		a = SetMenuItemInfo( p->parent->menu, p->id, false, &mii );
+#endif
+#ifdef ENV_GTK
+		p->menu = gtk_menu_new( );
+		gtk_menu_item_set_submenu( GTK_MENU_ITEM( p->me ), p->menu );
+#endif
+#ifdef ENV_CARBON
+		CreateNewMenu( 0, 0, &p->menu );
+		SetMenuTitleWithCFString( p->menu, CFSTR("Test menu") );
+		SetMenuItemHierarchicalMenu( p->parent->menu, p->index, p->menu );
+#endif
+	}
+	
+	p->hassubs = 1;
+	
+	if ( p->items != NULL )
+		mi->next = p->items;
+	
+	p->items = mi;
+	mi->parent = p;
+	mi->hassubs = 0;
+	mi->onclick = 0;
+	mi->text = (char *)malloc( strlen( text ) + 1 );
+	strcpy( mi->text, text );
+	
+#ifdef ENV_WIN32
+	AppendMenu( p->menu, 0, mi->id, mi->text );
+
+	if ( m->parent->info->widget != NULL )
+		DrawMenuBar( m->parent->info->widget );
+#endif
+
+#ifdef ENV_GTK
+	// fix up mnemonics.. GTK expects _, not &.
+	for ( a = 0; a < strlen( mi->text ); a++ )
+		if ( mi->text[a] == '&' )
+			mi->text[a] = '_';
+		
+	mi->me = gtk_image_menu_item_new_with_mnemonic( mi->text );
+	gtk_menu_shell_append( GTK_MENU_SHELL( p->menu ), mi->me );
+	gtk_widget_show( mi->me );
+	
+	g_signal_connect_swapped( G_OBJECT( mi->me ), "activate", G_CALLBACK( c_menubar_item_clicked_handler ), mi );
+#endif
+
+#ifdef ENV_CARBON
+	// It seems Apple has something against including mnemonics...
+	char *tmp = strdup( mi->text );
+	int b;
+	
+	for ( b = 0, a = 0; a < strlen( mi->text ); a++ )
+	{
+		if ( mi->text[a] == '&' )
+			continue;
+		
+		tmp[b] = mi->text[a];
+		tmp[b+1] = 0;
+		b++;
+	}
+	
+	strcpy( mi->text, tmp );
+	free( tmp );
+	
+	if ( !( m->info->flags & C_MENU_POPUP ) && menu_bar == p )
+	{
+		CFStringRef str;
+		
+		mi->hassubs = 1;
+		CreateNewMenu( mi->id, 0, &mi->menu );
+		
+		str = CFStringCreateWithCString( NULL, mi->text, strlen( mi->text ) );
+		
+		SetMenuTitleWithCFString( mi->menu, str );
+		InsertMenu( mi->menu, 0 );
+		DrawMenuBar( );
+		
+		CFRelease( str );
+	}
+	else
+	{
+		CFStringRef str;
+		
+		str = CFStringCreateWithCString( NULL, mi->text, strlen( mi->text ) );
+		
+		AppendMenuItemTextWithCFString( p->menu, str, 0, 0xFFFF, &mi->index );
+		SetMenuItemRefCon( p->menu, mi->index, (int)mi );
+		
+		DrawMenuBar( );
+		
+		CFRelease( str );
+	}
+#endif
+
+	return mi;
+}
+
+void c_menubar_popup( CWidget *w, int x, int y )
+{
+#ifdef ENV_WIN32
+	TrackPopupMenu( ((CMenuBarWidgetInfo *)w->info)->menubar.menu, 0, x, y, 0, w->parent->info->widget, 0 );
+#endif
+}
+
+void c_menubar_handle_create( CEvent *e, void *data )
+{
+	CWindowWidgetInfo *i = (CWindowWidgetInfo *)e->caller->parent->info;
+	
+#ifdef ENV_WIN32
+	HWND hwnd_parent = e->caller->parent->info->widget;
+	RECT r;
+	
+	if ( !( e->caller->info->flags & C_MENU_POPUP ) )
+	{
+		i->info.flags |= C_WINDOW_HAS_MENUBAR;
+		
+		r.left = e->caller->parent->info->x;
+		r.right = (e->caller->parent->info->x == -1 ? 0 : e->caller->parent->info->x) + e->caller->parent->info->width;
+		r.top = e->caller->parent->info->y;
+		r.bottom = (e->caller->parent->info->y == -1 ? 0 : e->caller->parent->info->y) + e->caller->parent->info->height;
+		
+		AdjustWindowRect( &r, GetWindowLong( e->caller->parent->info->widget, GWL_STYLE ), true );
+		
+		MoveWindow( hwnd_parent, r.left, r.top, r.right-r.left, r.bottom-r.top, true );
+		
+		// Now, actually use it
+		SetMenu( hwnd_parent, ((CMenuBarWidgetInfo *)e->caller->info)->menubar.menu );
+		
+		if ( i->info.flags & C_MDIPARENT )
+			SetMenu( glob_mdi_client, ((CMenuBarWidgetInfo *)e->caller->info)->menubar.menu );
+	
+		DrawMenuBar( hwnd_parent );
+	}
+	
+	//c_send_event( e->caller, C_EVENT_UPDATE, 0 );
+#endif
+
+#ifdef ENV_GTK
+	if ( !( e->caller->info->flags & C_MENU_POPUP ) )
+	{
+		i->info.flags |= C_WINDOW_HAS_MENUBAR;
+		i->menubar = e->caller->info->widget;
+		
+		gtk_box_pack_start( GTK_BOX(i->vbox), e->caller->info->widget, FALSE, FALSE, 0 );
+		gtk_widget_show( e->caller->info->widget );
+	}
+#endif
+
+#ifdef ENV_CARBON
+	if ( !( e->caller->info->flags & C_MENU_POPUP ) )
+	{
+		
+	}
+	else
+	{
+		//SetRootMenu( ((CMenuBarWidgetInfo *)e->caller->info)->menubar.menu );
+		//InsertMenu( ((CMenuBarWidgetInfo *)e->caller->info)->menubar.menu, 0 );
+	}
+#endif
+
+	printf("c_menubar_handle_create( ) -> %p\n", i->menubar);
+}
+
+CWidget *c_new_menubar( CWidget *parent, int flags )
+{
+	CWidget *w;
+	CMenuBarWidgetInfo *wi;
+	
+	if ( parent == 0 )
+		parent = c_application;
+	
+	w = c_clone_widget( 0, parent );
+	
+	c_init_widget_info( w, sizeof( CMenuBarWidgetInfo ) );
+	
+	wi = (CMenuBarWidgetInfo *)w->info;
+	
+	w->info->type = CLARO_WIDGET_MENUBAR;
+	w->info->flags = flags;
+	
+	// add event handler
+	c_new_event_handler( w, C_EVENT_CREATE, c_menubar_handle_create );
+	
+	// actually SEND the create event
+	c_send_event( w, C_EVENT_CREATE, 0 );
+	
+	memset( &wi->menubar, 0, sizeof( CMenuItem ) );
+	
+#ifdef ENV_WIN32
+	if ( flags & C_MENU_POPUP )
+		wi->menubar.menu = CreatePopupMenu( );
+	else
+		wi->menubar.menu = CreateMenu( );
+#endif
+#ifdef ENV_GTK
+	if ( flags & C_MENU_POPUP )
+		wi->menubar.menu = gtk_menu_new( );
+	else
+		wi->menubar.menu = gtk_menu_bar_new( );
+#endif
+#ifdef ENV_CARBON
+	CreateNewMenu( 0, 0, &wi->menubar.menu );
+#endif
+
+#if !defined(ENV_CARBON)
+	w->info->widget = (CNativeWidget)((CMenuBarWidgetInfo *)w->info)->menubar.menu;
+#endif
+
+	wi->menubar.hassubs = 1;
+	wi->menubar.id = curr_menuitem_id++;
+	wi->menubar.onclick = 0;
+	wi->menubar.text = "Root Menu";
+	
+	return w;
+}

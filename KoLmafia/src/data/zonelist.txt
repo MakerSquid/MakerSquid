@@ -1,0 +1,66 @@
+1
+Town	Town	Seaside Town
+Casino	Town	Seaside Casino
+Dungeon	Town	Seaside Dungeon
+
+Hobopolis	Hobopolis	Hobopolis
+The Slime Tube	The Slime Tube	The Slime Tube
+
+The Sea	The Sea	The Sea
+
+Manor0	Manor0	Spookyraven (Cellar)
+Manor1	Manor1	Spookyraven (First Floor)
+Manor2	Manor2	Spookyraven (Second Floor)
+
+Plains	Plains	Nearby Plains
+Rift	Plains	Temporal Rift
+Tower	Plains	Fernswarthy's Tower
+Beanstalk	Plains	Above the Beanstalk
+
+BatHole	BatHole	Bat Hole
+
+Knob	Knob	Cobb's Knob
+Lab	Knob	Knob Cobb's Knob Lab
+
+Cyrpt	Cyrpt	Defiled Cyrpt
+
+Woods	Woods	Distant Woods
+
+Friars	Friars	Deep Fat Friar's
+
+Mountain	Mountain	Big Mountains
+McLarge	Mountain	Mt. McLargeHuge
+
+Beach	Beach	Desert Beach
+Pyramid	Beach	Ancient Buried Pyramid
+
+Island	Island	Mysterious Island
+
+IsleWar	IsleWar	Island War Quest
+Farm	IsleWar	McMillicancuddy's Farm
+Orchard	IsleWar	Organic Orchard
+Junkyard	IsleWar	Wartime Junkyard
+
+Signed Zones	Signed Zones	Signed Zones
+Gyms	Signed Zones	Clan/Signed Gyms
+MusSign	Signed Zones	Muscle Sign
+MysSign	Signed Zones	Mysticality Sign
+MoxSign	Signed Zones	Moxie Sign
+BadMoon	Signed Zones	Bad Moon
+
+Item-Driven	Item-Driven	Item-Driven Zones
+Astral	Item-Driven	Astral Plane
+Portal	Item-Driven	El Vibrato Island
+Wormwood	Item-Driven	Worm Wood
+Memories	Item-Driven	Memories
+
+Unsorted	Unsorted	No Category
+Sorceress	Unsorted	Sorceress Lair
+Holiday	Unsorted	Holiday Zones
+
+Removed	Removed	Removed Areas
+Crimbo05	Removed	Christmas 2005
+Crimbo06	Removed	Christmas 2006
+Crimbo07	Removed	Christmas 2007
+Crimbo08	Removed	Christmas 2008
+WhiteWed	Removed	White Wednesday

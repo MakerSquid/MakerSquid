@@ -1,0 +1,731 @@
+/*************************************************************************
+$Id$
+
+Claro - A cross platform GUI toolkit which "makes sense".
+Copyright (C) 2004 Theo Julienne and Gian Perrone
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+**************************************************************************/
+
+#include "../include/includes.h"
+
+CLARO_WIDGET_DEFINITION
+
+int c_widget_screen_offset_x( CWidget *w )
+{
+#ifdef ENV_WIN32
+	RECT r;
+	
+	GetWindowRect( w->info->widget, &r );
+	
+	return r.left;
+#endif
+}
+
+int c_widget_screen_offset_y( CWidget *w )
+{
+#ifdef ENV_WIN32
+	RECT r;
+	
+	GetWindowRect( w->info->widget, &r );
+	
+	return r.top;
+#endif
+}
+
+void c_set_widget_local_cursor_pos( CWidget *w, int x, int y )
+{
+#ifdef ENV_WIN32
+	RECT r;
+	
+	GetWindowRect( w->info->widget, &r );
+	
+	x += r.left;
+	y += r.top;
+	
+	SetCursorPos( x, y );
+#endif
+}
+
+void c_widget_setup( CWidget *w )
+{
+	// update widget enabled state
+	c_widget_update_enable( w );
+	
+	// update focus
+	c_widget_fix_focus( w );
+}
+
+#ifdef ENV_GTK
+gint c_gtk_widget_click_handler( GtkWidget *widget, GdkEventButton *e, CWidget *w )
+{
+	int *pos = malloc( sizeof(int) * 2 );
+	
+	pos[0] = e->x;
+	pos[1] = e->y;
+		
+	c_send_event( w, C_EVENT_MOUSE_LEFT_CLICK, pos );
+	
+	return FALSE;
+}
+
+gint c_gtk_widget_motion_handler( GtkWidget *widget, GdkEventMotion *e, CWidget *w )
+{
+	int *pos = malloc( sizeof(int) * 2 );
+	
+	pos[0] = e->x;
+	pos[1] = e->y;
+	
+	c_send_event( w, C_EVENT_MOUSE_MOVE, pos );
+	
+	return FALSE;
+}
+#endif
+
+CWidget *c_find_nonaligner_parent( CWidget *iw )
+{
+	CWidget *w;
+	
+	if ( iw == 0 || iw->parent == 0 )
+		return iw;
+
+	w = iw->parent;
+	
+	if ( w->info->type != CLARO_WIDGET_ALIGNER )
+	{
+		printf( "Found non-aligner parent of type %d\n", w->info->type );
+		return w;
+	}
+	
+	return c_find_nonaligner_parent( w );
+}
+
+void c_widget_restore( CWidget *w )
+{
+	if ( w->info->widget == 0 )
+		return;
+	
+#ifdef ENV_WIN32
+	ShowWindow( w->info->widget, SW_SHOWNORMAL );
+#endif
+}
+
+void c_widget_maximize( CWidget *w )
+{
+	if ( w->info->widget == 0 )
+		return;
+	
+#ifdef ENV_WIN32
+	ShowWindow( w->info->widget, SW_MAXIMIZE );
+#endif
+}
+
+void c_widget_minimize( CWidget *w )
+{
+	if ( w->info->widget == 0 )
+		return;
+	
+#ifdef ENV_WIN32
+	ShowWindow( w->info->widget, SW_MINIMIZE );
+#endif
+}
+
+void c_widget_hide( CWidget *w )
+{
+	w->info->hidden = 1;
+	
+	if ( w->info->widget == 0 )
+		return;
+	
+#ifdef ENV_WIN32
+	ShowWindow( w->info->widget, SW_HIDE );
+#endif
+
+#ifdef ENV_CARBON
+	if ( w->info->type == CLARO_WIDGET_WINDOW )
+		HideWindow( w->info->widget );
+	else if ( w->info->type == CLARO_WIDGET_GROUPBOX )
+		HideControl( ((CGroupBoxWidgetInfo *)w->info)->pcontrol );
+	else
+		HideControl( w->info->widget );
+#endif
+}
+
+void c_widget_show( CWidget *w )
+{
+	w->info->hidden = 0;
+	
+	if ( w->info->widget == 0 )
+		return;
+
+#ifdef ENV_WIN32
+	ShowWindow( w->info->widget, SW_SHOW );
+#endif
+
+#ifdef ENV_CARBON
+	if ( w->info->type == CLARO_WIDGET_WINDOW )
+		ShowWindow( w->info->widget );
+	else if ( w->info->type == CLARO_WIDGET_GROUPBOX )
+		ShowControl( ((CGroupBoxWidgetInfo *)w->info)->pcontrol );
+	else
+		ShowControl( w->info->widget );
+#endif
+}
+
+void c_widget_enable( CWidget *w )
+{
+	w->info->disabled = 0;
+	
+	if ( w->info->widget == 0 )
+		return;
+	
+#ifdef ENV_WIN32
+	EnableWindow( w->info->widget, true );
+#endif
+
+#ifdef ENV_GTK
+	gtk_widget_set_sensitive(w->info->widget, TRUE);
+#endif
+
+#ifdef ENV_CARBON
+	if ( w->info->type == CLARO_WIDGET_WINDOW )
+		0;//EnableWindow( w->info->widget );
+	else
+		EnableControl( w->info->widget );
+#endif
+}
+
+void c_widget_disable( CWidget *w )
+{
+	w->info->disabled = 1;
+	if ( w->info->widget == 0 )
+		return;
+
+#ifdef ENV_WIN32
+	EnableWindow( w->info->widget, false );
+#endif
+
+#ifdef ENV_GTK
+	gtk_widget_set_sensitive(w->info->widget, FALSE);
+#endif
+
+#ifdef ENV_CARBON
+	if ( w->info->type == CLARO_WIDGET_WINDOW )
+		0;//DisableWindow( w->info->widget );
+	else
+		DisableControl( w->info->widget );
+#endif
+}
+
+void c_widget_update_enable( CWidget *w )
+{
+	if ( w->info->disabled == 1 )
+		c_widget_disable( w );
+	else
+		c_widget_enable( w );
+		
+	if ( w->info->hidden == 1 )
+		c_widget_hide( w );
+}
+
+void c_widget_install( CWidget *w )
+{
+#ifdef ENV_CARBON
+	CWidget *wp = c_find_nonaligner_parent( w );
+	CWindowWidgetInfo *wwi;
+	
+	if ( w->info->type != CLARO_WIDGET_WINDOW && wp != 0 && wp->info->type == CLARO_WIDGET_WINDOW && wp->info->flags & C_MDICHILD )
+	{
+		wwi = (CWindowWidgetInfo *)wp->info;
+		
+		EmbedControl( w->info->widget, wwi->ws_pcontrol );
+		
+		if ( w->info->flags & C_SCROLLING_VERT )
+		{
+			EmbedControl( w->info->vscroll, wwi->ws_pcontrol );
+		}
+	}
+	
+	if ( w->info->type != CLARO_WIDGET_WINDOW && wp != 0 && wp->info->type == CLARO_WIDGET_GROUPBOX )
+	{
+		EmbedControl( w->info->widget, ((CGroupBoxWidgetInfo *)wp->info)->pcontrol );
+	}
+#endif
+	
+	c_font_fix( w );
+	
+	// install common (all widget) hooks here
+	
+#ifdef ENV_WIN32
+	w->info->wdc = 0;
+	
+	// 'borrow' the window proc for widget, remember old one
+	w->info->real_proc = (WNDPROC)SetWindowLong( w->info->widget, GWL_WNDPROC, (long)c_win32_intercept_proc );
+	
+	ShowWindow( w->info->widget, SW_SHOW );
+	UpdateWindow( w->info->widget );
+#endif
+	
+	c_widget_update_enable( w );
+	c_widget_fix_focus( w );
+}
+
+void c_widget_close( CWidget *w )
+{
+	c_close_widget( w );
+}
+
+void c_widget_focus( CWidget *wg )
+{
+	printf("c_widget_focus()\n"); 
+	if ( wg->info->widget == 0 )
+	{
+		wg->info->initfocus = 1;
+		return;
+	}
+#ifdef ENV_WIN32
+	if ( wg->info->type == CLARO_WIDGET_WINDOW && !( wg->info->flags & C_MDICHILD ) )
+		SetForegroundWindow( wg->info->widget );
+	else
+		SetFocus( wg->info->widget );
+#endif
+#ifdef ENV_GTK
+	int x, y;
+	
+	CWindowWidgetInfo *wwi;
+	GtkWidget *layout;
+
+	if ((wg->info->flags & C_MDICHILD) && (wg->info->type==CLARO_WIDGET_WINDOW))  {
+		wwi= ((CWindowWidgetInfo*)wg->info);
+	 	layout=c_find_nonaligner_parent(wg)->info->widget;
+
+		
+		x=wg->info->widget->allocation.x; y=wg->info->widget->allocation.y;
+
+		if (current_child!=0) {
+			((CWindowWidgetInfo*)current_child->info)->focused=0;
+		}
+	
+		current_child=wg;
+
+		wwi->focused=1;
+
+		gtk_container_remove(GTK_CONTAINER(layout),wwi->frame->box);
+		gtk_layout_put(GTK_LAYOUT(layout), wwi->frame->box,x,y);
+	} else {
+		gtk_widget_grab_focus(wg->info->widget); 
+	}
+	
+	c_send_event(wg, C_EVENT_ONFOCUS, 0);
+#endif
+#ifdef ENV_CARBON
+	if ( wg->info->type == CLARO_WIDGET_WINDOW && wg->info->flags & C_MDICHILD )
+	{
+		c_workspace_popup( wg->parent, wg );
+	}
+#endif
+}
+
+void c_widget_fix_focus( CWidget *w )
+{
+	if ( w->info->initfocus == 1 )
+		c_widget_focus( w );
+	
+	w->info->initfocus = 0;
+}
+
+void c_widget_move_info( CWidget *wg, int x, int y, int w, int h )
+{
+	CWidgetInfo *wi = wg->info;
+	
+	wi->x = x;
+	wi->y = y;
+	wi->width = w;
+	wi->height = h;
+}
+
+void c_widget_move( CWidget *wg, int x, int y, int w, int h )
+{
+#ifdef ENV_WIN32
+	HWND hwnd;
+#endif
+
+	c_widget_move_info( wg, x, y, w, h );
+	
+#ifdef ENV_WIN32
+	hwnd = (HWND)wg->info->widget;
+	
+	MoveWindow( hwnd, x, y, w, h, true );
+	UpdateWindow( hwnd );
+#endif
+
+#ifdef ENV_CARBON
+	if ( wg->info->type == CLARO_WIDGET_WINDOW )
+	{
+		wg->info->cspace.y = 0;
+		wg->info->cspace.x = 0;
+		wg->info->cspace.w = w;
+		wg->info->cspace.h = h;
+	}
+	else
+	{
+		MoveControl( wg->info->widget, x, y );
+		SizeControl( wg->info->widget, w, h );
+	}
+#endif
+
+#ifdef ENV_GTK
+	if ( wg->info->type == CLARO_WIDGET_WINDOW )
+/*		if ( wg->info->flags & C_MDICHILD )
+			window_set_state( wg );
+		else*/
+			gtk_decorated_window_move_resize_window(wg->info->widget,x,y,w,h);
+	else
+	{
+		gtk_layout_move( wg->parent->info->widget, wg->info->widget, x, y );
+		gtk_widget_set_size_request( wg->info->widget, w, h );
+	}
+	
+	//window_set_state(wg); 
+	// ? gtk_decorated_window_move_resize_window(wg->info->widget,x,y,w,h);
+#endif
+
+	c_send_event_now( wg, C_EVENT_RESIZE, 0 );
+
+}
+
+int c_widget_width( CWidget *w )
+{
+	if ( w->info->widget == 0 )
+		return w->info->width;
+#ifdef ENV_WIN32
+	/*HWND hwnd;
+	RECT r;
+	
+	hwnd = (HWND)w->info->widget;
+	
+	//GetClientRect( hwnd, &r );
+	GetWindowRect( hwnd, &r );
+	
+	//return r.right;
+	return r.right - r.left;*/
+	return w->info->width;
+#endif
+#ifdef ENV_GTK
+	return w->info->widget->allocation.width;
+#endif
+#ifdef ENV_CARBON
+	return w->info->width;
+#endif
+}
+
+int c_widget_height( CWidget *w )
+{
+	if ( w->info->widget == 0 )
+		return w->info->height;
+#ifdef ENV_WIN32
+/*
+	HWND hwnd;
+	RECT r;
+	
+	hwnd = (HWND)w->info->widget;
+	
+	//GetClientRect( hwnd, &r );
+	GetWindowRect( hwnd, &r );
+	
+	//return r.bottom;
+	return r.bottom - r.top;
+	*/
+	return w->info->height;
+#endif
+#ifdef ENV_GTK
+	return w->info->widget->allocation.height;
+#endif
+#ifdef ENV_CARBON
+	return w->info->height;
+#endif
+}
+
+/* internal function c_init_widget_info
+ *
+ *desc
+ * Allocates and sets a widget's info field
+ */
+void c_init_widget_info( CWidget *w, int size )
+{
+	w->info = (CWidgetInfo *)malloc( size );
+	memset( w->info, 0, size );
+}
+
+/* public function c_clone_widget
+ *
+ *desc
+ * Clones widget /w/ and parents the clone to /p/, then returns the clone. 
+ */
+CWidget *c_clone_widget( CWidget *w, CWidget *p )
+{
+	CWidget *c;
+	
+	c = (CWidget *)malloc(sizeof(CWidget));
+	
+	if ( w == 0 )
+		memset( c, 0, sizeof(CWidget) );
+	else
+		memcpy( c, w, sizeof(CWidget) );
+	
+	c->freeze_destroy = 0;
+	
+	// just to be safe, clone source parenting not carried
+	c->parent = c->child_head = c->child_curr = c->next = c->prev = 0;
+
+	c->info = 0;
+	
+	// let the parents know about the newborn
+	//     ( without surprising them, ahaha )
+	if ( p != 0 )
+	{
+		c_font_bind_widget( p->font, c );
+		c_set_parent( c, p );
+	}
+	
+	// setup event handlers
+	c_init_events( (CEvent **)&c->handlers );
+	
+	if ( w != 0 )
+	{
+		/*printf( "Cloning events...\n" );
+		c_clone_events( &c->handlers, &w->handlers );*/
+	}
+	
+	return c;
+}
+
+/* public function c_close_widget
+ *
+ *desc
+ * Gets 'the ball rolling' on closing a widget
+ */
+void c_close_widget ( CWidget *w )
+{
+	if ( w->info->type == CLARO_WIDGET_ALIGNER )
+		return;
+	
+#ifdef ENV_WIN32
+	PostMessage( w->info->widget, WM_CLOSE, 0, 0 );
+#endif
+
+#ifdef ENV_CARBON
+	if ( w->info->type == CLARO_WIDGET_WINDOW && w->info->flags & C_MDICHILD )
+	{
+		CWindowWidgetInfo *wwi;
+		wwi = (CWindowWidgetInfo *)w->info;
+		
+		c_workspace_deadchild( w->parent, w );
+		
+		DisposeControl( wwi->ws_pcontrol );
+		
+		CEvent *e;
+		e = (CEvent *)malloc( sizeof(CEvent) );
+		e->data = 0;
+		e->caller = w;
+		e->id = C_EVENT_DELAYED_DESTROY;
+		
+		c_queue_event( e );
+		
+		//c_send_event( w, C_EVENT_DELAYED_DESTROY, 0 );
+		
+		return;
+	}
+	
+	DisposeWindow( w->info->widget );
+	c_destroy_widget( w, 1 );
+#endif
+	
+#ifdef ENV_GTK
+	/*
+	if (w->info->flags & C_MDICHILD) 
+		window_close(w);
+	else
+*/	
+		if ( w->info->type == CLARO_WIDGET_WINDOW )
+			gtk_widget_destroy( ((CWindowWidgetInfo *)w->info)->win );
+		else
+			gtk_widget_destroy(w->info->widget);
+#endif
+}
+
+/* public function c_destroy_widget
+ *
+ *desc
+ * Destroys widget /w/, cleans up memory and "informs" parent and siblings.
+ */
+void c_destroy_widget ( CWidget *w, int notify )
+{
+	CWidget *curr, *next;
+	CEvent *e;
+	CEvent de;
+	
+	w->freeze_destroy = 1;
+	
+	c_font_widget_gone( w->font, w );
+	
+	e = c_find_handler( C_EVENT_DESTROY, w->handlers );
+	
+	if ( e != 0 && e->handler != 0 )
+	{
+		memcpy( &de, e, sizeof(CEvent) );
+		de.caller = w;
+		(*e->handler)( &de, 0 );
+	}
+	
+	e = c_find_handler( C_EVENT_INTERNAL_DESTROY, w->handlers );
+	
+	if ( e != 0 && e->handler != 0 )
+	{
+		memcpy( &de, e, sizeof(CEvent) );
+		de.caller = w;
+		(*e->handler)( &de, 0 );
+	}
+	
+	c_destroy_events( w->handlers );
+	// notify parents about child death :(
+	if ( notify == 1 )
+		c_remove_child( w, c_get_parent( w ) );
+	
+	c_destroy_pending( &c_event_queue, w );
+	
+	// now. this society here doesn't allow
+	//  orphans. so, to make everyone's life
+	//  much easier, let's just kill all those
+	//  grand-children
+	
+	for ( curr = w->child_head; curr != 0; curr = next )
+	{
+		// save the next child, or we get REALLY
+		//  orphaned children.
+		next = curr->next;
+		
+		// recursive murder of children.
+		c_destroy_widget( curr, 0 );
+	}
+	
+	free( w->info );
+	free( w );
+}
+
+/* internal function c_add_child callers c_set_parent
+ *
+ *desc
+ * Adds a child, /w/, to /p/'s children stack
+ */
+void c_add_child( CWidget *w, CWidget *p )
+{
+	if ( w == 0 || p == 0 )
+		return; // I don't think so, buddy.
+	
+	if ( p->child_head == 0 )
+	{
+		p->child_head = p->child_curr = w;
+	}
+	else
+	{
+		p->child_curr->next = w;
+		w->prev = p->child_curr;
+		p->child_curr = w;
+	}
+}
+
+/* internal function c_remove_child callers c_set_parent, c_destroy_widget
+ *
+ *desc
+ * Adds a child, /w/, to /p/'s children stack
+ */
+void c_remove_child( CWidget *w, CWidget *p )
+{
+	CWidget *curr;
+	
+	if ( w == 0 || p == 0 )
+		return; // I don't think so, buddy.
+	
+	// widget has no parent, now.
+	w->parent = 0;
+	
+	for ( curr = p->child_head; curr != 0; curr = curr->next )
+	{
+		if ( curr == w )
+		{
+			if ( curr->prev == 0 )
+			{
+				// first.. 
+				if ( curr->next == 0 )
+					// and last.
+					p->child_head = p->child_curr = 0;
+				else
+				{
+					// of many.
+					p->child_head = curr->next;
+					curr->next->prev = 0;
+				}
+			}
+			else
+			{
+				// NOT first..
+				curr->prev->next = curr->next;
+				
+				if ( curr->next == 0 )
+				{
+					// last
+					p->child_curr = curr->prev;
+				}
+				else
+				{
+					// middle, patch over.
+					curr->next->prev = curr->prev;
+				}
+			}
+			return;
+		}
+	}
+}
+
+/* internal useless function c_get_parent
+ *
+ *desc
+ * Returns widget /w/'s parent (w->parent)
+ */
+CWidget *c_get_parent( CWidget *w )
+{
+	return w->parent;
+}
+
+/* internal function c_set_parent callers c_clone_widget
+ *
+ *desc
+ * Sets widget /w/'s parent to /p/
+ */
+void c_set_parent( CWidget *w, CWidget *p )
+{
+	if ( w == 0 )
+		return; // Such nice error checking! :)
+	
+	// notify old parent about the "adoption"
+	if ( w->parent != 0 )
+		c_remove_child( w, w->parent );
+	
+	if ( p != 0 )
+		c_add_child( w, p );
+	
+	w->parent = p;
+}

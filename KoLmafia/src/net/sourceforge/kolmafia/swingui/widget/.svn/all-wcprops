@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kolmafia/!svn/ver/7550/src/net/sourceforge/kolmafia/swingui/widget
+END
+AutoHighlightSpinner.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/AutoHighlightSpinner.java
+END
+GenericScrollPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/GenericScrollPane.java
+END
+ShowDescriptionList.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/kolmafia/!svn/ver/7460/src/net/sourceforge/kolmafia/swingui/widget/ShowDescriptionList.java
+END
+ColorChooser.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/ColorChooser.java
+END
+UnanimatedLabel.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/UnanimatedLabel.java
+END
+AutoFilterComboBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/AutoFilterComboBox.java
+END
+AutoFilterTextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/kolmafia/!svn/ver/7550/src/net/sourceforge/kolmafia/swingui/widget/AutoFilterTextField.java
+END
+AutoHighlightTextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/AutoHighlightTextField.java
+END
+ListCellRendererFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/kolmafia/!svn/ver/7485/src/net/sourceforge/kolmafia/swingui/widget/ListCellRendererFactory.java
+END
+RequestPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/widget/RequestPane.java
+END

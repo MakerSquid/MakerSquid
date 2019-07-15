@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/kolmafia/!svn/ver/7544/src/net/sourceforge/kolmafia/persistence
+END
+Preferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7302/src/net/sourceforge/kolmafia/persistence/Preferences.java
+END
+AscensionSnapshot.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/persistence/AscensionSnapshot.java
+END
+SkillDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/7042/src/net/sourceforge/kolmafia/persistence/SkillDatabase.java
+END
+FamiliarDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/kolmafia/!svn/ver/7444/src/net/sourceforge/kolmafia/persistence/FamiliarDatabase.java
+END
+DebugDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/7507/src/net/sourceforge/kolmafia/persistence/DebugDatabase.java
+END
+CoinmastersDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/persistence/CoinmastersDatabase.java
+END
+BuffBotDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6844/src/net/sourceforge/kolmafia/persistence/BuffBotDatabase.java
+END
+MonsterDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/7524/src/net/sourceforge/kolmafia/persistence/MonsterDatabase.java
+END
+HolidayDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/7045/src/net/sourceforge/kolmafia/persistence/HolidayDatabase.java
+END
+CustomItemDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/persistence/CustomItemDatabase.java
+END
+ProfileSnapshot.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/persistence/ProfileSnapshot.java
+END
+EffectDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kolmafia/!svn/ver/7487/src/net/sourceforge/kolmafia/persistence/EffectDatabase.java
+END
+Aliases.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6389/src/net/sourceforge/kolmafia/persistence/Aliases.java
+END
+AdventureDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/7543/src/net/sourceforge/kolmafia/persistence/AdventureDatabase.java
+END
+NPCStoreDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/kolmafia/!svn/ver/7509/src/net/sourceforge/kolmafia/persistence/NPCStoreDatabase.java
+END
+ItemDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7528/src/net/sourceforge/kolmafia/persistence/ItemDatabase.java
+END
+ConcoctionDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kolmafia/!svn/ver/7411/src/net/sourceforge/kolmafia/persistence/ConcoctionDatabase.java
+END
+ItemFinder.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7533/src/net/sourceforge/kolmafia/persistence/ItemFinder.java
+END
+FlaggedItems.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/persistence/FlaggedItems.java
+END
+EquipmentDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/7471/src/net/sourceforge/kolmafia/persistence/EquipmentDatabase.java
+END
+MallPriceDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/7544/src/net/sourceforge/kolmafia/persistence/MallPriceDatabase.java
+END

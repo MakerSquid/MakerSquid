@@ -1,0 +1,8 @@
+CLARODIR=..
+
+CFLAGS=-I$(CLARODIR)/include -DENV_CARBON -L$(CLARODIR)/lib -L$(CLARODIR) -lclarogt
+
+all: test
+	cp $(CLARODIR)/*.dylib .
+	sh ../scripts/createMacBundle.sh ClaroTest test
+	./ClaroTest.app/Contents/MacOS/ClaroTest

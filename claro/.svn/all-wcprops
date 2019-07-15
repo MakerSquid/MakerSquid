@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/terminal/claro/!svn/ver/120/
+END
+configure.mac
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/terminal/claro/!svn/ver/99/configure.mac
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/terminal/claro/!svn/ver/100/configure
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/terminal/claro/!svn/ver/1/LICENSE
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/terminal/claro/!svn/ver/1/TODO
+END
+Makefile.win
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/terminal/claro/!svn/ver/92/Makefile.win
+END
+compile.bat
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/terminal/claro/!svn/ver/1/compile.bat
+END

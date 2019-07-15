@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svnroot/kolmafia/!svn/ver/6203/src/tab
+END
+CloseTabPaneEnhancedUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kolmafia/!svn/ver/5403/src/tab/CloseTabPaneEnhancedUI.java
+END
+DoubleClickListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/kolmafia/!svn/ver/5403/src/tab/DoubleClickListener.java
+END
+PopupOutsideListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kolmafia/!svn/ver/5403/src/tab/PopupOutsideListener.java
+END
+CloseListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/kolmafia/!svn/ver/5403/src/tab/CloseListener.java
+END
+CloseTabbedPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/kolmafia/!svn/ver/6203/src/tab/CloseTabbedPane.java
+END
+MaxListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/kolmafia/!svn/ver/5403/src/tab/MaxListener.java
+END
+CloseTabbedPaneEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kolmafia/!svn/ver/5403/src/tab/CloseTabbedPaneEvent.java
+END
+CloseTabPaneUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/kolmafia/!svn/ver/6190/src/tab/CloseTabPaneUI.java
+END

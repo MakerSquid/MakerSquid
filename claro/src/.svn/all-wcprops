@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/terminal/claro/!svn/ver/120/src
+END
+claro.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/terminal/claro/!svn/ver/106/src/claro.c
+END
+events.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/terminal/claro/!svn/ver/106/src/events.c
+END
+system.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/terminal/claro/!svn/ver/106/src/system.c
+END
+images.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/terminal/claro/!svn/ver/114/src/images.c
+END
+font.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/terminal/claro/!svn/ver/119/src/font.c
+END
+widgets.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/terminal/claro/!svn/ver/118/src/widgets.c
+END
+table.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/terminal/claro/!svn/ver/106/src/table.c
+END

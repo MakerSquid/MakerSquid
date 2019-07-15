@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/kolmafia/!svn/ver/7562/src/net/sourceforge/kolmafia/session
+END
+PvpManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/PvpManager.java
+END
+EquipmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7532/src/net/sourceforge/kolmafia/session/EquipmentManager.java
+END
+MoneyMakingGameManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kolmafia/!svn/ver/7536/src/net/sourceforge/kolmafia/session/MoneyMakingGameManager.java
+END
+MushroomManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7036/src/net/sourceforge/kolmafia/session/MushroomManager.java
+END
+LouvreManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/7299/src/net/sourceforge/kolmafia/session/LouvreManager.java
+END
+LeafletManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7191/src/net/sourceforge/kolmafia/session/LeafletManager.java
+END
+ClanManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/ClanManager.java
+END
+ChatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/7498/src/net/sourceforge/kolmafia/session/ChatManager.java
+END
+SorceressLairManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/kolmafia/!svn/ver/7552/src/net/sourceforge/kolmafia/session/SorceressLairManager.java
+END
+EventManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/7498/src/net/sourceforge/kolmafia/session/EventManager.java
+END
+MailManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/MailManager.java
+END
+ResultProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7480/src/net/sourceforge/kolmafia/session/ResultProcessor.java
+END
+ValhallaManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6856/src/net/sourceforge/kolmafia/session/ValhallaManager.java
+END
+OceanManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/OceanManager.java
+END
+BuffBotManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/BuffBotManager.java
+END
+ChoiceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/7535/src/net/sourceforge/kolmafia/session/ChoiceManager.java
+END
+StoreManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/7531/src/net/sourceforge/kolmafia/session/StoreManager.java
+END
+InventoryManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7531/src/net/sourceforge/kolmafia/session/InventoryManager.java
+END
+TurnCounter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/7541/src/net/sourceforge/kolmafia/session/TurnCounter.java
+END
+MoodManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/7551/src/net/sourceforge/kolmafia/session/MoodManager.java
+END
+VioletFogManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7372/src/net/sourceforge/kolmafia/session/VioletFogManager.java
+END
+CustomCombatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/7551/src/net/sourceforge/kolmafia/session/CustomCombatManager.java
+END
+WumpusManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/7562/src/net/sourceforge/kolmafia/session/WumpusManager.java
+END
+DisplayCaseManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kolmafia/!svn/ver/6850/src/net/sourceforge/kolmafia/session/DisplayCaseManager.java
+END
+BreakfastManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7308/src/net/sourceforge/kolmafia/session/BreakfastManager.java
+END
+ActionBarManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/session/ActionBarManager.java
+END
+NemesisManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7556/src/net/sourceforge/kolmafia/session/NemesisManager.java
+END
