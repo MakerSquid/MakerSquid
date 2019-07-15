@@ -47,6 +47,7 @@
     <Compile Include="FileIterator.cs" />
     <Compile Include="FilePackager.cs" />
     <Compile Include="FileSelection.cs" />
+    <Compile Include="GitBatchCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

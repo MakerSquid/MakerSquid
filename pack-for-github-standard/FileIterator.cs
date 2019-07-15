@@ -27,7 +27,7 @@ namespace PackForGithub
 			var basePath = assembly.Location.Remove(assembly.Location.Length - assembly.ManifestModule.Name.Length);
 
 #if DEVMODE
-			basePath = "C:\\solomon\\notes\\";
+			basePath = "C:\\solomon\\flac\\";
 #endif
 			return basePath;
 		}

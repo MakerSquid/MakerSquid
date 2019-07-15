@@ -11,6 +11,7 @@ namespace PackForGithub
 			var fileIterator = new FileIterator();
 			var archiver = new FileArchiver();
 			var ignorer = new FileIgnorer();
+			var batcher = new GitBatchCreator();
 
 			if (argList.Contains("-u"))
 			{
@@ -20,6 +21,10 @@ namespace PackForGithub
 
 				archiver.ExtractArchives(files);
 				//ignorer.Ignore(files);
+			}
+			else if (argList.Contains("-b"))
+			{
+				batcher.CreateBatch();
 			}
 			else
 			{

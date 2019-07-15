@@ -24,9 +24,10 @@ namespace rock_paper_scissors
 		private static bool randomize = false;
 		private static bool reportChunks = false;
 		private static int games = 0;
-		private static int maxGames = 5;
+		private static int maxGames = 25;
 		private static Moves playersLastMove;
 		private static bool? lastResult = null;
+		private static bool usingStrategy = false;
 
 		static void Main(string[] args)
 		{
@@ -63,6 +64,12 @@ namespace rock_paper_scissors
 						}
 					}
 				}
+
+				if (!randomize)
+				{
+					Console.WriteLine($"We are going to play {maxGames} games.");
+				}
+
 				var keepGoing = true;
 				while (games <= maxGames && keepGoing)
 				{
@@ -89,7 +96,7 @@ namespace rock_paper_scissors
 
 		private static bool Play()
 		{
-			Moves gameMove = GetMove();
+			Moves gameMove = GetMove(true);
 			var cheating = "";
 			if (cheat)
 			{
@@ -122,13 +129,14 @@ namespace rock_paper_scissors
 			return true;
 		}
 
-		private static Moves GetMove()
+		private static Moves GetMove(bool isGame)
 		{
 			//fall back to just random, but use a bit of trickery that works on humans...
 
 			Moves fallback = (Moves)rnd.Next(1, 4);
+			usingStrategy = (fallback == Moves.Rock) ? true : false;  //1/3 of the time we'll use the strategy and mostly we won't
 
-			//if (!randomize)
+			if (isGame && usingStrategy && !randomize)
 			{
 				if (lastResult.HasValue && lastResult.Value)
 				{
@@ -155,7 +163,7 @@ namespace rock_paper_scissors
 		{
 			if (randomize)
 			{
-				return GetMove();
+				return GetMove(false);
 			}
 
 			var input = Console.ReadKey();
@@ -213,6 +221,7 @@ namespace rock_paper_scissors
 		private static void GetWinner(Moves player, Moves game)
 		{
 			bool? outcome = null;
+			string strategy = (usingStrategy) ? " with strategy" : "";
 
 			if (player == Moves.Rock)
 			{
@@ -220,17 +229,17 @@ namespace rock_paper_scissors
 
 				if (game == Moves.Paper)
 				{
-					SendOutput("Paper covers rock, I win!");
+					SendOutput($"Paper covers rock, I win!{strategy}");
 					outcome = true;
 				}
 				else if (game == Moves.Scissors)
 				{
-					SendOutput("Rock smashes scissors, you win!");
+					SendOutput($"Rock smashes scissors, you win!{strategy}");
 					outcome = false;
 				}
 				else
 				{
-					SendOutput("We tied!");
+					SendOutput($"We tied!{strategy}");
 				}
 			}
 			if (player == Moves.Paper)
@@ -239,18 +248,18 @@ namespace rock_paper_scissors
 
 				if (game == Moves.Scissors)
 				{
-					SendOutput("Scissors cut paper, I win!");
+					SendOutput($"Scissors cut paper, I win!{strategy}");
 					playersLastMove = Moves.Rock;
 					outcome = true;
 				}
 				else if (game == Moves.Rock)
 				{
-					SendOutput("Paper covers rock, you win!");
+					SendOutput($"Paper covers rock, you win!{strategy}");
 					outcome = false;
 				}
 				else
 				{
-					SendOutput("We tied!");
+					SendOutput($"We tied!{strategy}");
 				}
 			}
 			if (player == Moves.Scissors)
@@ -259,18 +268,18 @@ namespace rock_paper_scissors
 
 				if (game == Moves.Rock)
 				{
-					SendOutput("Rock smashes scissors, I win!");
+					SendOutput($"Rock smashes scissors, I win!{strategy}");
 					playersLastMove = Moves.Rock;
 					outcome = true;
 				}
 				else if (game == Moves.Paper)
 				{
-					SendOutput("Scissors cut paper, you win!");
+					SendOutput($"Scissors cut paper, you win!{strategy}");
 					outcome = false;
 				}
 				else
 				{
-					SendOutput("We tied!");
+					SendOutput($"We tied!{strategy}");
 				}
 			}
 
