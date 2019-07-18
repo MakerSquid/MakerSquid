@@ -1,0 +1,8 @@
+1 Perfboard
+-   3 NPN Transistors (2N2222, 2N3904, BC547, etc.)
+- 12 Resistors (~220 ohms and ~22k ohms)
+- 13  Headers (male or female)
+- 27 LEDs
+- Jumper wires
+
+servo motor (tg9)

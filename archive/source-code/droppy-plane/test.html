@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title>Ethan chambers</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+  <script src=p5.collide2d.js></script>
+</head>
+
+
+<body>
+  <script>
+  var hit = false;
+  var xx=50
+  var yy=300
+function setup() {
+	createCanvas(1000,300);
+
+}
+
+function moveCircle(){
+  ellipse(xx,yy,50,50)
+
+  if(keyIsDown(83)){
+    yy+=5
+  }
+  if(keyIsDown(87)){
+    yy-=5
+  }
+  if(keyIsDown(65)){
+    xx-=5
+
+  }
+  if(keyIsDown(68)){
+    xx+=5
+  }
+  }
+
+
+function draw(){
+  background('white')
+  moveCircle();
+	
+	rect(400,100,200,100);
+
+
+
+      crateHit = collidePointRect(xx,yy,400,100,200,100)
+      console.log('Checking collsion')
+      if(crateHit){
+        fill('black')
+          alert('Good Job')
+          container();
+
+      }
+  }
+</script>
+</body>
+
+</html>
