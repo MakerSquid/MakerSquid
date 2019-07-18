@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:shrinkColumns="*">
+    <TableRow>
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:stretchColumns="2">
+ 		<TableRow>
+	       <TextView
+	        android:id="@+id/health"
+	            android:text="Health: 100"
+	            android:padding="3dip" />
+	       <TextView
+	       android:id="@+id/experience"
+	            android:text="Experience: 0"
+	            android:padding="3dip" />
+	       <TextView
+	       android:id="@+id/currency"
+	            android:text="Gold: 0"
+	            android:padding="3dip" />
+	            </TableRow>
+    <TableRow>
+        <Button android:text="Explore" android:id="@+id/adventure" 
+         android:layout_height="wrap_content" ></Button>
+        <Button android:text="Heal" android:id="@+id/heal" 
+        android:layout_height="wrap_content"></Button>
+    </TableRow>
+		</TableLayout>
+   </TableRow>
+    <TableRow>
+        <TextView
+        android:id="@+id/resultsText"
+            android:text="You are approached by a centaur that is wearing a green fedora."
+            android:padding="3dip"
+            android:singleLine="false"
+            android:layout_height="fill_parent" />
+    </TableRow>
+ </TableLayout>

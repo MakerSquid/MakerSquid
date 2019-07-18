@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/kolmafia/!svn/ver/7003/src/com/velocityreviews/forums
+END
+HttpTimeoutHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/5796/src/com/velocityreviews/forums/HttpTimeoutHandler.java
+END
+HttpTimeoutClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/7003/src/com/velocityreviews/forums/HttpTimeoutClient.java
+END
+HttpTimeoutURLConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kolmafia/!svn/ver/5796/src/com/velocityreviews/forums/HttpTimeoutURLConnection.java
+END

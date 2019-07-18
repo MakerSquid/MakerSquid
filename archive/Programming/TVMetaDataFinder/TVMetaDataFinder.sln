@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4E338CAD-E39A-4190-8196-C569CE432A19}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		TVMetaDataFinder.vsmdi = TVMetaDataFinder.vsmdi
+		TVMetaDataFinder1.vsmdi = TVMetaDataFinder1.vsmdi
+		TVMetaDataFinder10.vsmdi = TVMetaDataFinder10.vsmdi
+		TVMetaDataFinder11.vsmdi = TVMetaDataFinder11.vsmdi
+		TVMetaDataFinder12.vsmdi = TVMetaDataFinder12.vsmdi
+		TVMetaDataFinder13.vsmdi = TVMetaDataFinder13.vsmdi
+		TVMetaDataFinder14.vsmdi = TVMetaDataFinder14.vsmdi
+		TVMetaDataFinder15.vsmdi = TVMetaDataFinder15.vsmdi
+		TVMetaDataFinder16.vsmdi = TVMetaDataFinder16.vsmdi
+		TVMetaDataFinder17.vsmdi = TVMetaDataFinder17.vsmdi
+		TVMetaDataFinder2.vsmdi = TVMetaDataFinder2.vsmdi
+		TVMetaDataFinder3.vsmdi = TVMetaDataFinder3.vsmdi
+		TVMetaDataFinder4.vsmdi = TVMetaDataFinder4.vsmdi
+		TVMetaDataFinder5.vsmdi = TVMetaDataFinder5.vsmdi
+		TVMetaDataFinder6.vsmdi = TVMetaDataFinder6.vsmdi
+		TVMetaDataFinder7.vsmdi = TVMetaDataFinder7.vsmdi
+		TVMetaDataFinder8.vsmdi = TVMetaDataFinder8.vsmdi
+		TVMetaDataFinder9.vsmdi = TVMetaDataFinder9.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVMetaDataFinder", "TVMetaDataFinder\TVMetaDataFinder.csproj", "{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TVMetaDataFinder-Setup", "TVMetaDataFinder-Setup\TVMetaDataFinder-Setup.vdproj", "{BF358BE3-44D4-4404-BD1A-7865B8D30C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetVersion", "SetVersion\SetVersion.csproj", "{56408087-85F4-4476-999D-B26E9BC6FB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8881D97A-5813-4210-9B87-722C9F16C668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVMetaDataFinderLib", "TVMetaDataFinderLib\TVMetaDataFinderLib.csproj", "{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs09.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SetVersion\\SetVersion.csproj
+		SccProjectName1 = SetVersion
+		SccLocalPath1 = SetVersion
+		SccProjectUniqueName2 = TVMetaDataFinder-Setup\\TVMetaDataFinder-Setup.vdproj
+		SccProjectName2 = TVMetaDataFinder-Setup
+		SccLocalPath2 = TVMetaDataFinder-Setup
+		SccProjectUniqueName3 = TVMetaDataFinder\\TVMetaDataFinder.csproj
+		SccProjectName3 = TVMetaDataFinder
+		SccLocalPath3 = TVMetaDataFinder
+		SccProjectUniqueName4 = TVMetaDataFinderLib\\TVMetaDataFinderLib.csproj
+		SccProjectName4 = TVMetaDataFinderLib
+		SccLocalPath4 = TVMetaDataFinderLib
+		SccProjectUniqueName5 = UnitTests\\UnitTests.csproj
+		SccProjectName5 = UnitTests
+		SccLocalPath5 = UnitTests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TVMetaDataFinder17.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Debug|x86.ActiveCfg = Debug|x86
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Debug|x86.Build.0 = Debug|x86
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Release|x86.ActiveCfg = Release|x86
+		{BF0F4847-3AFA-47BD-A32E-216E5D694C6B}.Release|x86.Build.0 = Release|x86
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Debug|Any CPU.ActiveCfg = Debug
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Debug|x86.ActiveCfg = Debug
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Debug|x86.Build.0 = Debug
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Release|Any CPU.ActiveCfg = Release
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Release|x86.ActiveCfg = Release
+		{BF358BE3-44D4-4404-BD1A-7865B8D30C27}.Release|x86.Build.0 = Release
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Debug|x86.ActiveCfg = Debug|x86
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Debug|x86.Build.0 = Debug|x86
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Release|x86.ActiveCfg = Release|x86
+		{56408087-85F4-4476-999D-B26E9BC6FB16}.Release|x86.Build.0 = Release|x86
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Debug|x86.ActiveCfg = Debug|x86
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Debug|x86.Build.0 = Debug|x86
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Release|x86.ActiveCfg = Release|x86
+		{8881D97A-5813-4210-9B87-722C9F16C668}.Release|x86.Build.0 = Release|x86
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Debug|x86.ActiveCfg = Debug|x86
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Debug|x86.Build.0 = Debug|x86
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Release|x86.ActiveCfg = Release|x86
+		{5831516B-2FA6-4B68-B22B-2DC55BC04DC5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+﻿<Window x:Class="DeployGUI.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="SMART Deploy GUI" Height="450" Width="380" Loaded="Window_Loaded">
+	<Grid HorizontalAlignment="Center">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Label Content="Source: " Height="28" Grid.Row="0" Grid.Column="0" />
+			<TextBox Name="Source" Height="Auto" Grid.Row="0" Grid.Column="1" Width="200" IsReadOnly="True" IsEnabled="False" Margin="0,5,0,5" MaxLines="2" TextWrapping="Wrap" />
+			<Label Content="Website:" Height="28" Grid.Row="1" Grid.Column="0" />
+			<TextBox Height="23" Name="ClientWebsite" Width="200" Grid.Row="1" Grid.Column="1" />
+			<Label Content="Services:" Height="28" Grid.Row="2" Grid.Column="0" />
+			<TextBox Height="23" Name="ServiceWebsite" Width="200" Grid.Row="2" Grid.Column="1" />
+			<Label Content="CRM Service:" Height="28" Grid.Row="3" Grid.Column="0" />
+			<TextBox Height="23" Name="CrmWebsite" Width="200" Grid.Row="3" Grid.Column="1" />
+			<Label Content="Branch:" Height="28" Grid.Row="4" Grid.Column="0" />
+			<TextBox Height="23" Name="Branch" Width="200" Grid.Row="4" Grid.Column="1" TextChanged="Branch_TextChanged" />
+			<Label Content="Release:" Height="28" Grid.Row="5" Grid.Column="0"/>
+			<TextBox Height="23" Name="Release" Width="200" Grid.Row="5" Grid.Column="1" TextChanged="Release_TextChanged" />
+			<Label Content="Build:" Height="28"  Grid.Row="6" Grid.Column="0"/>
+			<TextBox Height="23" Name="Build" Width="200"  Grid.Row="6" Grid.Column="1" TextChanged="Build_TextChanged" />
+			<Button Content="Deploy" Height="Auto" Name="Deploy"  Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" Margin="10,10,10,10" Click="Deploy_Click" />
+		</Grid>
+	</Grid>
+</Window>

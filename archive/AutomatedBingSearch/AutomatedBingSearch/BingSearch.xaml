@@ -1,0 +1,13 @@
+﻿<Window x:Class="AutomatedBingSearch.BingSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Loaded="Window_Loaded"
+        Title="MainWindow" Height="217" Width="324">
+    <Grid HorizontalAlignment="Center" Height="181" Width="270">
+		<Label Content="Live Id:" Height="28" HorizontalAlignment="Left" Margin="24,12,0,0" Name="label1" VerticalAlignment="Top" />
+		<TextBox Height="23" HorizontalAlignment="Left" Margin="76,24,0,0" Name="uxLiveId" VerticalAlignment="Top" Width="120" />
+		<Label Content="Live Pwd:" Height="28" HorizontalAlignment="Left" Margin="14,54,0,0" Name="label2" VerticalAlignment="Top" />
+		<PasswordBox Height="23" HorizontalAlignment="Left" Margin="76,66,0,0" Name="uxLivePass" VerticalAlignment="Top" Width="120" />
+		<Button Content="Search Bing" Height="23" Click="uxSearchBing_Click" HorizontalAlignment="Left" Margin="114,130,0,0" Name="uxSearchBing" VerticalAlignment="Top" Width="75" />
+	</Grid>
+</Window>

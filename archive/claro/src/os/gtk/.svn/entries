@@ -1,0 +1,41 @@
+8
+
+dir
+120
+http://svn.versiondude.net/terminal/claro/src/os/gtk
+http://svn.versiondude.net/terminal/claro
+
+
+
+2005-08-10T00:17:32.980823Z
+106
+terminal
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+991bf56b-b2ed-0310-b27d-acff2a009fec
+
+window.c
+file
+
+
+
+
+2006-10-09T15:57:42.375358Z
+0ac8a9241d23accb4866c9948b8efc38
+2005-08-10T00:17:32.980823Z
+106
+terminal
+has-props
+

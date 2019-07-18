@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon
+END
+WindowsTrayIcon.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon/WindowsTrayIcon.java
+END
+TrayIconKeeper.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayIconKeeper.java
+END
+TrayIconCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayIconCallback.java
+END
+TrayIconPopupSimpleItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon/TrayIconPopupSimpleItem.java
+END
+TrayIconException.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon/TrayIconException.java
+END
+TrayBalloonEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayBalloonEvent.java
+END
+TrayIconPopupCheckItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayIconPopupCheckItem.java
+END
+TrayIconPopupItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayIconPopupItem.java
+END
+TrayBalloonListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayBalloonListener.java
+END
+TrayIconPopup.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon/TrayIconPopup.java
+END
+TrayIconPopupSeparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kolmafia/!svn/ver/5403/src/com/jeans/trayicon/TrayIconPopupSeparator.java
+END
+TrayDummyComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kolmafia/!svn/ver/5629/src/com/jeans/trayicon/TrayDummyComponent.java
+END

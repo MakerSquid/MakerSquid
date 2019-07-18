@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/terminal/bersirc/!svn/ver/173/src/options
+END
+opt_firewall_ip.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/terminal/bersirc/!svn/ver/52/src/options/opt_firewall_ip.c
+END
+opt_general.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/terminal/bersirc/!svn/ver/173/src/options/opt_general.c
+END
+opt_time.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/bersirc/!svn/ver/133/src/options/opt_time.c
+END
+opt_nicklist.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/terminal/bersirc/!svn/ver/52/src/options/opt_nicklist.c
+END
+opt_connections.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/terminal/bersirc/!svn/ver/52/src/options/opt_connections.c
+END
+opt_colour.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/bersirc/!svn/ver/52/src/options/opt_colour.c
+END
+opt_visual.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/bersirc/!svn/ver/52/src/options/opt_visual.c
+END
+opt_assorted.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/terminal/bersirc/!svn/ver/52/src/options/opt_assorted.c
+END
+opt_text.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/terminal/bersirc/!svn/ver/52/src/options/opt_text.c
+END
+opt_irc_servers.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/terminal/bersirc/!svn/ver/52/src/options/opt_irc_servers.c
+END
+opt_highlight.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/terminal/bersirc/!svn/ver/52/src/options/opt_highlight.c
+END
+opt_taskbar.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/terminal/bersirc/!svn/ver/52/src/options/opt_taskbar.c
+END
+opt_fonts.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/terminal/bersirc/!svn/ver/150/src/options/opt_fonts.c
+END
+opt_misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/terminal/bersirc/!svn/ver/161/src/options/opt_misc.c
+END

@@ -1,0 +1,58 @@
+A planetary location-based adventure game.  Start on a single planet, when you've done everything there, you have aquired a space ship and can adventure to other planets.  The point is not to adventure in space (perhaps eventually) but basically a turn based adventure game with flexibility to do anything that a particular planet has to offer.
+
+There are multiple locations within a planet.
+
+
+[Planets]
+Lolcatia
+
+[Locations] w/ Planet
+Xobtac Desert (Sand Dunes)
+Forest
+Cardboard Box
+
+[Monsters] w/ location
+Walriz (Attacks with tusks) (aquire tusk) (aquire bucket) (Walrus Blubber)
+Deadly Kitteh of Death (hacks up hairballs) (aquire lucky hairballs)
+Box Kat (Jumps out and scares you)
+Ninja Kat (Sneaks up on you)
+Fearsome Goggie (Slobbers you to death) (Carries socks with it)
+Sealing Kat (tries to seal your eyes up with its claws) (induces allergies?)
+Bazemint Kat (
+Squirzel (Pelts you with nuts) (aquire nuts)
+Chipotle Parrot (randomly drops feather)
+A hand that feeds u
+Zombie Kat (Just lays there stinking)
+Were Cat (it could be anywhere) only at night or under full moon?  special item drop
+
+[Items]
+Traps for cats... (Pocket Mirror - create sunshine trap) Magazine/newspaper, 
+Bucket (Prevents walrus attacks)
+Catnip Mouse
+Dead Fish
+Ball of String
+Aluminum Foil Ball
+string + chipotle feather = cat toy
+
+[Non Combat Adventures]
+Shake a tree - aquire a nut - aquire kite string or broken kite
+Shake a bush - paper towels/napkins...
+Lift a rock
+trip on a fallen log (can injure you) or just waste a turn
+fall into a stream
+Pick a strange plant  - some might be catnip (combine with sock)
+
+[Gains]
+Experience
+Gold
+Random item drops
+
+[Character attributes]
+Health
+Energy
+Equipment
+
+[Healing Characters/Items]
+Zombie Cat Brains
+witch doctor
+

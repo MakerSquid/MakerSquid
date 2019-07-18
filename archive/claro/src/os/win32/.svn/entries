@@ -1,0 +1,41 @@
+8
+
+dir
+120
+http://svn.versiondude.net/terminal/claro/src/os/win32
+http://svn.versiondude.net/terminal/claro
+
+
+
+2005-11-03T22:11:54.873694Z
+120
+terminal
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+991bf56b-b2ed-0310-b27d-acff2a009fec
+
+claro.c
+file
+
+
+
+
+2006-10-09T15:57:42.263042Z
+a271a1840ae8c60bfc751e8d5b68e641
+2005-11-03T22:11:54.873694Z
+120
+terminal
+has-props
+

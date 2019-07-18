@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/kolmafia/!svn/ver/7562/src/net/sourceforge/kolmafia/swingui
+END
+FlowerHunterFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/FlowerHunterFrame.java
+END
+ClanManageFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7451/src/net/sourceforge/kolmafia/swingui/ClanManageFrame.java
+END
+CoinmastersFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7072/src/net/sourceforge/kolmafia/swingui/CoinmastersFrame.java
+END
+ContactListFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/ContactListFrame.java
+END
+RequestFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6907/src/net/sourceforge/kolmafia/swingui/RequestFrame.java
+END
+OptionsFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/7470/src/net/sourceforge/kolmafia/swingui/OptionsFrame.java
+END
+MailboxFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/MailboxFrame.java
+END
+CouncilFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/7131/src/net/sourceforge/kolmafia/swingui/CouncilFrame.java
+END
+AdventureFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7040/src/net/sourceforge/kolmafia/swingui/AdventureFrame.java
+END
+SendMessageFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/SendMessageFrame.java
+END
+MeatManageFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6867/src/net/sourceforge/kolmafia/swingui/MeatManageFrame.java
+END
+ProfileFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/ProfileFrame.java
+END
+StoreManageFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/StoreManageFrame.java
+END
+CharSheetFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/CharSheetFrame.java
+END
+ItemManageFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6927/src/net/sourceforge/kolmafia/swingui/ItemManageFrame.java
+END
+CalendarFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/CalendarFrame.java
+END
+CakeArenaFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/CakeArenaFrame.java
+END
+MuseumFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/MuseumFrame.java
+END
+MallSearchFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/MallSearchFrame.java
+END
+GenericFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/GenericFrame.java
+END
+SkillBuffFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/6881/src/net/sourceforge/kolmafia/swingui/SkillBuffFrame.java
+END
+TabbedChatFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/TabbedChatFrame.java
+END
+GearChangeFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7297/src/net/sourceforge/kolmafia/swingui/GearChangeFrame.java
+END
+SystemTrayFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/SystemTrayFrame.java
+END
+TrophyFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/TrophyFrame.java
+END
+BuffBotFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/BuffBotFrame.java
+END
+BuffRequestFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/7305/src/net/sourceforge/kolmafia/swingui/BuffRequestFrame.java
+END
+GenericPanelFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/GenericPanelFrame.java
+END
+RequestSynchFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/RequestSynchFrame.java
+END
+DatabaseFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/DatabaseFrame.java
+END
+CommandDisplayFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/CommandDisplayFrame.java
+END
+RecentEventsFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/RecentEventsFrame.java
+END
+MaximizerFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7531/src/net/sourceforge/kolmafia/swingui/MaximizerFrame.java
+END
+LoginFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/kolmafia/!svn/ver/7167/src/net/sourceforge/kolmafia/swingui/LoginFrame.java
+END
+MushroomFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/MushroomFrame.java
+END
+ChatFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kolmafia/!svn/ver/7482/src/net/sourceforge/kolmafia/swingui/ChatFrame.java
+END
+FamiliarTrainingFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kolmafia/!svn/ver/7304/src/net/sourceforge/kolmafia/swingui/FamiliarTrainingFrame.java
+END
+DescriptionFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/swingui/DescriptionFrame.java
+END

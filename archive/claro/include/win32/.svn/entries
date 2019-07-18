@@ -1,0 +1,54 @@
+8
+
+dir
+120
+http://svn.versiondude.net/terminal/claro/include/win32
+http://svn.versiondude.net/terminal/claro
+
+
+
+2005-07-30T23:17:03.865384Z
+86
+terminal
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+991bf56b-b2ed-0310-b27d-acff2a009fec
+
+defs.h
+file
+
+
+
+
+2006-10-09T15:57:40.887171Z
+fd20990eaabf0b2f7fe6b06876f3111c
+2005-04-30T04:25:57.663209Z
+44
+terminal
+has-props
+
+includes.h
+file
+
+
+
+
+2006-10-09T15:57:40.915250Z
+94244fe3e86fa8005d491319358363f8
+2005-07-30T23:17:03.865384Z
+86
+terminal
+has-props
+

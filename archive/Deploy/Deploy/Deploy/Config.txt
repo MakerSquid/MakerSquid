@@ -1,0 +1,35 @@
+﻿#General Deployment Variables
+
+BUILD=253
+RELEASE=4.3.4
+BRANCH=DEV
+ZIP="C:\Program Files\7-zip\7z.exe"
+WHERE=True
+
+#Do not end paths with \
+
+SOURCE-PATH=\\smartweb01\smartweb-deployments
+WEBSITE-TARGET-PATH=.\Client
+SERVICE-TARGET-PATH=.\Service
+CRM-SERVICE-TARGET-PATH=.\SMART_CRM_Webservice
+CONFIG-BACKUP-PATH=.\Configs
+
+# The following lines are for the port setter part of the deployment
+# IF THE SITE USES PORT 80, SET THE PORT TO 80 AND NO PORT WILL BE USED IN THE TARGET FILE
+# SITE-ID IS DECREMENTED BY 1 AND USED TO REPLACE THE X'S IN THE PORT NUMBERS
+
+CLIENT-URL=http://smartweb.corporate.ncm
+SERVICE-URL=http://smartwebservice.corporate.ncm
+CRM-URL=http://smartwebcrmservice.corporate.ncm
+CLIENT-PORT=80
+SERVICE-PORT=80
+CRM-PORT=80
+SITE-ID=1
+
+#The following configs will have their ports sorted out, but URLs that don't match those above will NOT be changed.
+#The current Regex logic is too generic and will change all URLs in the config each time (unless it uses the specific paths), so it would be nice to enhance this
+#to actually fix the config URLs and not just the ports...
+
+TARGET=Configs\Client\web.config
+TARGET=Configs\Client\ServiceReferences.ClientConfig
+TARGET=Configs\Service\web.config

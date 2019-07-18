@@ -1,0 +1,45 @@
+<UISettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CheckForUpgrade>true</CheckForUpgrade>
+  <DefaultDirectory></DefaultDirectory>
+  <DropFolder></DropFolder>
+  <RenameFilesChecked>true</RenameFilesChecked>
+  <PromptEachFilesChecked>false</PromptEachFilesChecked>
+  <FileFormat>04 - TV Show.avi</FileFormat>
+  <SaveMetaData>true</SaveMetaData>
+  <ForceRefresh>false</ForceRefresh>
+  <MiminimizeToTray>false</MiminimizeToTray>
+  <LastDirectory></LastDirectory>
+  <SaveBannerArt>true</SaveBannerArt>
+  <HideMetaData>true</HideMetaData>
+  <WebTimeOutInSeconds>0</WebTimeOutInSeconds>
+  <ExtractFromVideo>true</ExtractFromVideo>
+  <OtherFileFormat>{3} - {4}</OtherFileFormat>
+  <SaveMyFile>false</SaveMyFile>
+  <TVShowExtractor>
+    <string>\[[Ss]([0-9]+)\]_\[[Ee]([0-9]+)([^\\/]*)</string>
+    <string>[\._ \-]([0-9]+)x([0-9]+)([^\\/]*)</string>
+    <string>[\._ \-][Ss]([0-9]+)[\.\-]?[Ee]([0-9]+)([^\\/]*)</string>
+    <string>[\._ \-]([0-9]+)([0-9][0-9])([\._ \-][^\\/]*)</string>
+  </TVShowExtractor>
+  <TVShowReplacer>
+    <SearchAndReplace>
+      <SearchFor>merlin$</SearchFor>
+      <ReplaceWith>merlin 2008</ReplaceWith>
+    </SearchAndReplace>
+    <SearchAndReplace>
+      <SearchFor>x factor uk$</SearchFor>
+      <ReplaceWith>x factor</ReplaceWith>
+    </SearchAndReplace>
+    <SearchAndReplace>
+      <SearchFor>^\w+-</SearchFor>
+      <ReplaceWith />
+    </SearchAndReplace>
+  </TVShowReplacer>
+  <ShowMenuExtenions>
+    <ShowMenuExtenion>
+      <MenuName>Bing</MenuName>
+      <!-- show is show name -->      
+      <Action>http://www.bing.com/search?q={show} {seasontowatch}x{eptowatch}</Action>
+    </ShowMenuExtenion>
+  </ShowMenuExtenions>
+</UISettings>

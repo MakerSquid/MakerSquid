@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/kolmafia/!svn/ver/7560/src/net/sourceforge/kolmafia/webui
+END
+BasementDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7550/src/net/sourceforge/kolmafia/webui/BasementDecorator.java
+END
+HobopolisDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/webui/HobopolisDecorator.java
+END
+DungeonDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7543/src/net/sourceforge/kolmafia/webui/DungeonDecorator.java
+END
+MemoriesDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7494/src/net/sourceforge/kolmafia/webui/MemoriesDecorator.java
+END
+BeerPongDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/webui/BeerPongDecorator.java
+END
+CharPaneDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7397/src/net/sourceforge/kolmafia/webui/CharPaneDecorator.java
+END
+CellarDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6795/src/net/sourceforge/kolmafia/webui/CellarDecorator.java
+END
+ValhallaDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kolmafia/!svn/ver/7518/src/net/sourceforge/kolmafia/webui/ValhallaDecorator.java
+END
+BarrelDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/6895/src/net/sourceforge/kolmafia/webui/BarrelDecorator.java
+END
+MineDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kolmafia/!svn/ver/6828/src/net/sourceforge/kolmafia/webui/MineDecorator.java
+END
+StationaryButtonDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/kolmafia/!svn/ver/7344/src/net/sourceforge/kolmafia/webui/StationaryButtonDecorator.java
+END
+IslandDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kolmafia/!svn/ver/7194/src/net/sourceforge/kolmafia/webui/IslandDecorator.java
+END
+UseLinkDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kolmafia/!svn/ver/7560/src/net/sourceforge/kolmafia/webui/UseLinkDecorator.java
+END

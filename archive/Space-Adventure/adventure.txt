@@ -1,0 +1,52 @@
+[combat]
+As you pass what you thought was an empty cardboard box a(n) {monster} {action}.
+You are attacked by a(n).  It {action}.
+While wandering through a peaceful meadow you are attacked by a(n) {monster} that you failed to notice when you stopped to smell the flowers.  It {action}.
+You encounter a(n) {monster}. It {action}.
+
+[non-combat]
+You trip over {object}. [While lying face down in the mud, you spot {item}.] [Health Damage]
+You stumble upon a {monster} but it is asleep. You {health-restore}. [Health Restore]
+You find {item}.  It was just lying there in the grass. [Acquire Item]
+
+
+#Monster specific attacks
+
+[Walriz]
+Attacks with tusks.
+Hits you with its bucket.
+
+[Deadly Kitteh of Death]
+hacks up hairballs
+overcomes you with its cuteness.
+
+[Box Kat] 
+Jumps out and scares you
+
+[Ninja Kat]
+Sneaks up on you
+
+[Fearsome Goggie] 
+Attempts to slobber you to death.
+Drools on you.
+
+[Sealing Kat]
+Licks your face until your eyes swell shut.
+
+[Bazemint Kat]
+Attempts to coerce you into smoking an herbal cigarette.
+
+[Squirzel] 
+Pelts you with nuts
+
+[Chipotle Parrot]
+Squawks a colorful phrase at you.
+
+[A hand that feeds u]
+
+[Zombie Kat]
+Just lays there stinking.
+Farts in your general direction.
+
+#Were Cat (it could be anywhere) only at night or under full moon?  special item drop
+

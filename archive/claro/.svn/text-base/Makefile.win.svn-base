@@ -1,0 +1,80 @@
+# Cheap rip from Linux ./configure generated Makefile :-)
+#
+
+PFORM=win32
+
+FILES=src/widgets.o \
+src/events.o \
+src/claro.o \
+src/system.o \
+src/font.o \
+src/table.o \
+src/os/win32/claro.o \
+src/widgets/application.o \
+src/widgets/window.o \
+src/widgets/label.o \
+src/widgets/pushbutton.o \
+src/widgets/textbox.o \
+src/widgets/progressbar.o \
+src/widgets/radiogroup.o \
+src/widgets/radiobutton.o \
+src/widgets/statusbar.o \
+src/widgets/menubar.o \
+src/widgets/canvas.o \
+src/widgets/scrollbar.o \
+src/widgets/workspace.o \
+src/widgets/aligner.o \
+src/widgets/listbox.o \
+src/widgets/listview.o \
+src/widgets/toolbar.o \
+src/widgets/groupbox.o \
+src/widgets/checkbox.o \
+src/widgets/dropdown.o \
+src/widgets/systrayicon.o \
+src/widgets/choosefont.o \
+src/widgets/choosefile.o \
+src/widgets/opengl.o \
+src/widgets/image.o \
+src/images.o
+
+INCLUDES=include/claro.h \
+include/includes.h \
+include/scrollbar.h \
+include/flags.h \
+include/image.h \
+include/widgets.h
+
+CC=gcc
+CFLAGS=-Iinclude -DENV_WIN32 -Wall -DENV_OPENGL
+LDFLAGS=-lGdi32 -lcomctl32 -shared -Wl,-soname,libclarogt.dll -lwsock32 -luser32 -Lwin32 -luser32-mw -lcomdlg32 -lm -lOpenGL32 -lglu32
+LIBOUT=libclarogt.dll
+
+CFLAGS+=-g
+
+clarogt: $(FILES) $(INCLUDES)
+	gcc $(FILES) $(CFLAGS) $(LDFLAGS) -o $(LIBOUT)
+
+all: clarogt
+
+install:
+	if exist \claro rmdir /Q /S \claro
+	mkdir \claro
+	mkdir \claro\include
+	mkdir \claro\include\$(PFORM)
+	copy include\$(PFORM)\* \claro\include\$(PFORM)
+	mkdir \claro\lib
+	mkdir \claro\bin
+	copy $(LIBOUT) \claro\lib
+	copy include\*.h \claro\include
+	
+	echo "" > \claro\bin\gcc-link
+	@echo Installed!
+
+tests:
+	mingw32-make.exe -C test
+
+clean:
+	del src\*.o
+	del src\widgets\*.o
+	del src\os\win32\*.o
+	del *.dll

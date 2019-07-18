@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deploy", "Deploy\Deploy.csproj", "{3E27EC36-6957-4AFC-AED0-5D26B88D8FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeployGUI", "DeployGUI\DeployGUI.csproj", "{006B937E-0CF7-41AF-8296-A12A3880B360}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ncmtfs08:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Deploy\\Deploy.csproj
+		SccProjectName1 = Deploy
+		SccLocalPath1 = Deploy
+		SccProjectUniqueName2 = DeployGUI\\DeployGUI.csproj
+		SccProjectName2 = DeployGUI
+		SccLocalPath2 = DeployGUI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E27EC36-6957-4AFC-AED0-5D26B88D8FB1}.Debug|x86.ActiveCfg = Debug|x86
+		{3E27EC36-6957-4AFC-AED0-5D26B88D8FB1}.Debug|x86.Build.0 = Debug|x86
+		{3E27EC36-6957-4AFC-AED0-5D26B88D8FB1}.Release|x86.ActiveCfg = Release|x86
+		{3E27EC36-6957-4AFC-AED0-5D26B88D8FB1}.Release|x86.Build.0 = Release|x86
+		{006B937E-0CF7-41AF-8296-A12A3880B360}.Debug|x86.ActiveCfg = Debug|x86
+		{006B937E-0CF7-41AF-8296-A12A3880B360}.Debug|x86.Build.0 = Debug|x86
+		{006B937E-0CF7-41AF-8296-A12A3880B360}.Release|x86.ActiveCfg = Release|x86
+		{006B937E-0CF7-41AF-8296-A12A3880B360}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
