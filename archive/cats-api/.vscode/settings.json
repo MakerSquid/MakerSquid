@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/71c09fe0-cc44-4de1-8d4d-8795c55139e4/resourceGroups/cats-api-test/providers/Microsoft.Web/sites/cats-api-test",
+    "appService.deploySubpath": ""
+}
